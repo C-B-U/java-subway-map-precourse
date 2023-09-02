@@ -20,4 +20,12 @@ public class OutputView {
         System.out.println(OutputMessage.MAIN_MESSAGE);
         System.out.println(stringBuilder);
     }
+
+    public void printOptions() {
+        System.out.println(OutputMessage.OPTION_SELECT);
+    }
+
+    public void printNewLine() {
+        System.out.println();
+    }
 }

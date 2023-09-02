@@ -1,5 +1,7 @@
 package subway.main;
 
+import java.util.Arrays;
+
 public enum MainOption {
     STATION_MANAGEMENT("1", "역 관리"),
     LINE_MANAGEMENT("2", "노선 관리"),
@@ -14,6 +16,13 @@ public enum MainOption {
     MainOption(String option, String title) {
         this.option = option;
         this.title = title;
+    }
+
+    public static MainOption getMainOption(String option) {
+        return Arrays.stream(MainOption.values())
+                .filter(value -> option.equals(value.option))
+                .findAny()
+                .orElseThrow();
     }
 
     public String getOption() {
