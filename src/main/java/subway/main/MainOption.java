@@ -1,5 +1,7 @@
 package subway.main;
 
+import subway.constant.ExceptionMessage;
+
 import java.util.Arrays;
 
 public enum MainOption {
@@ -22,7 +24,11 @@ public enum MainOption {
         return Arrays.stream(MainOption.values())
                 .filter(value -> option.equals(value.option))
                 .findAny()
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException(ExceptionMessage.INVALID_OPTION.toString()));
+    }
+
+    public boolean isStationManagement() {
+        return this == MainOption.STATION_MANAGEMENT;
     }
 
     public String getOption() {
