@@ -1,15 +1,16 @@
 package subway.line;
 
 public class Line {
-    private String name;
 
-    public Line(String name) {
+    private final String name;
+    private final StopStations stopStations;
+
+    public Line(String name, StopStations stopStations) {
         this.name = name;
+        this.stopStations = stopStations;
     }
 
     public String getName() {
         return name;
     }
-
-    // 추가 기능 구현
 }
