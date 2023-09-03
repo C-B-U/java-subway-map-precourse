@@ -44,12 +44,16 @@ public class OutputView {
         System.out.println(OutputMessage.CREATE_STATION);
     }
 
-    public void printCompleteStationCreate() {
+    public void printCreated() {
         System.out.println(InformationMessage.COMPLETE_CREATE_STATION);
     }
 
     public void printDeleteStation() {
         System.out.println(OutputMessage.DELETE_STATION);
+    }
+
+    public void printDeleted() {
+        System.out.println(InformationMessage.COMPLETE_DELETE_STATION);
     }
 
     public void printNewLine() {

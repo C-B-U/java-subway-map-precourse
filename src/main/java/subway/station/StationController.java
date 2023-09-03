@@ -25,13 +25,14 @@ public class StationController {
     private void createStation(StationOption option) {
         if (option.isCreate()) {
             stationService.create(inputView.readStationName());
-            outputView.printCompleteStationCreate();
+            outputView.printCreated();
         }
     }
 
     private void deleteStation(StationOption option) {
         if (option.isDelete()) {
             stationService.delete(inputView.readDeleteStationName());
+            outputView.printDeleted();
         }
     }
 }
