@@ -37,9 +37,9 @@ public class StationRepository {
         }
     }
 
-    public static boolean deleteStation(Station station) {
+    public static void deleteStation(Station station) {
         validateExistStation(station);
-        return stations.removeIf(value -> Objects.equals(value.getName(), station.getName()));
+        stations.removeIf(value -> Objects.equals(value.getName(), station.getName()));
     }
 
     private static void validateExistStation(Station station) {
