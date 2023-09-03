@@ -1,5 +1,6 @@
 package subway.line;
 
+import subway.constant.ExceptionMessage;
 import subway.station.Name;
 
 import java.util.ArrayList;
@@ -15,7 +16,19 @@ public class LineRepository {
     }
 
     public static void addLine(Name name, StopStations stations) {
+        validateStation(name);
         lines.add(new Line(name, stations));
+    }
+
+    private static void validateStation(Name name) {
+        if (isDuplicateName(name)) {
+            throw new IllegalArgumentException(ExceptionMessage.DUPLICATE_LINE.toString());
+        }
+    }
+
+    private static boolean isDuplicateName(Name name) {
+        return lines.stream()
+                .anyMatch(line -> line.isSame(name));
     }
 
     public static boolean deleteLineByName(String name) {

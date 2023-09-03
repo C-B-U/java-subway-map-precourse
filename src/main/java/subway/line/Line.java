@@ -12,7 +12,7 @@ public class Line {
         this.stopStations = stopStations;
     }
 
-    public Name getName() {
-        return name;
+    public boolean isSame(Name name) {
+        return name.equals(this.name);
     }
 }
