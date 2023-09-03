@@ -35,6 +35,10 @@ public enum StationOption {
         return this == DELETE;
     }
 
+    public boolean isRead() {
+        return  this == READ;
+    }
+
     public String getOption() {
         return option;
     }

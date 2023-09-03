@@ -20,6 +20,7 @@ public class StationController {
         StationOption option = inputView.readStationOption();
         createStation(option);
         deleteStation(option);
+        printStation(option);
     }
 
     private void createStation(StationOption option) {
@@ -33,6 +34,12 @@ public class StationController {
         if (option.isDelete()) {
             stationService.delete(inputView.readDeleteStationName());
             outputView.printDeleted();
+        }
+    }
+
+    private void printStation(StationOption option) {
+        if (option.isRead()) {
+            outputView.printStations();
         }
     }
 }

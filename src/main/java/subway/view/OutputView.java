@@ -4,7 +4,9 @@ import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
 import subway.main.MainOption;
+import subway.station.Station;
 import subway.station.StationOption;
+import subway.station.StationRepository;
 
 import java.util.Arrays;
 
@@ -54,6 +56,18 @@ public class OutputView {
 
     public void printDeleted() {
         System.out.println(InformationMessage.COMPLETE_DELETE_STATION);
+    }
+
+    public void printStations() {
+        StringBuilder stringBuilder = new StringBuilder();
+        StationRepository.stations()
+                .forEach(station -> appendStations(stringBuilder, station));
+        System.out.println(OutputMessage.READ_STATION);
+        System.out.println(stringBuilder);
+    }
+
+    private void appendStations(StringBuilder stringBuilder, Station station) {
+        stringBuilder.append(station);
     }
 
     public void printNewLine() {
