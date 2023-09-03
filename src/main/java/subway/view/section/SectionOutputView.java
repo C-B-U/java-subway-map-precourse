@@ -27,6 +27,9 @@ public class SectionOutputView {
         System.out.println(OutputMessage.OPTION_SELECT);
     }
 
+    public void printReadLineName() {
+        System.out.println(OutputMessage.SECTION_LINE);
+    }
     public void printNewLine() {
         System.out.println();
     }

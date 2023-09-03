@@ -1,6 +1,7 @@
 package subway.view.section;
 
 import subway.section.SectionOption;
+import subway.station.Name;
 
 import java.util.Scanner;
 
@@ -18,5 +19,12 @@ public class SectionInputView {
         SectionOption option = SectionOption.getOption(scanner.nextLine());
         outputView.printNewLine();
         return option;
+    }
+
+    public Name readLineName() {
+        outputView.printReadLineName();
+        String name = scanner.nextLine();
+        outputView.printNewLine();
+        return new Name(name);
     }
 }
