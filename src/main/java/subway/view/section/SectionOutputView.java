@@ -30,6 +30,11 @@ public class SectionOutputView {
     public void printReadLineName() {
         System.out.println(OutputMessage.SECTION_LINE);
     }
+
+    public void printReadStationName() {
+        System.out.println(OutputMessage.SECTION_STATION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }
