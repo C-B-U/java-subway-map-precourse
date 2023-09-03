@@ -38,7 +38,7 @@ public class LineController {
 
     public void deleteLine(LineOption option) {
         if (option.isDelete()) {
-            inputView.readDeleteStation();
+            lineService.delete(inputView.readDeleteStation());
         }
     }
 }

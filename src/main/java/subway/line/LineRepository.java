@@ -6,7 +6,6 @@ import subway.station.Name;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class LineRepository {
     private static final List<Line> lines = new ArrayList<>();
@@ -31,7 +30,15 @@ public class LineRepository {
                 .anyMatch(line -> line.isSame(name));
     }
 
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line, name));
+    public static boolean deleteLineByName(Name name) {
+        Line line = findLineByName(name);
+        return lines.remove(line);
+    }
+
+    private static Line findLineByName(Name name) {
+        return lines.stream()
+                .filter(line -> line.isSame(name))
+                .findAny()
+                .orElseThrow();
     }
 }

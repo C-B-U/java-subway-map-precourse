@@ -15,4 +15,8 @@ public class Line {
     public boolean isSame(Name name) {
         return name.equals(this.name);
     }
+
+    public Name getName() {
+        return name;
+    }
 }
