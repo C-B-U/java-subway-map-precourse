@@ -2,6 +2,8 @@ package subway.view.LineView;
 
 import subway.line.LineOption;
 import subway.station.Name;
+import subway.station.Station;
+import subway.station.StationRepository;
 
 import java.util.Scanner;
 
@@ -26,5 +28,12 @@ public class LineInputView {
         String name = scanner.nextLine();
         outputView.printNewLine();
         return new Name(name);
+    }
+
+    public Station readUpBoundStation() {
+        outputView.printUpBoundStation();
+        Station station = StationRepository.findByName(new Name(scanner.nextLine()));
+        outputView.printNewLine();
+        return station;
     }
 }

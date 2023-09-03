@@ -29,6 +29,10 @@ public class LineOutputView {
         System.out.println(OutputMessage.CREATE_LINE);
     }
 
+    public void printUpBoundStation() {
+        System.out.println(OutputMessage.UP_BOUND_STATION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }

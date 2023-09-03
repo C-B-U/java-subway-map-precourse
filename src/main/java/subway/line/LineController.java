@@ -1,5 +1,7 @@
 package subway.line;
 
+import subway.station.Name;
+import subway.station.Station;
 import subway.view.LineView.LineInputView;
 import subway.view.LineView.LineOutputView;
 
@@ -23,8 +25,8 @@ public class LineController {
 
     public void createLine(LineOption option) {
         if (option.isCreate()) {
-
-           inputView.readLineName();
+           Name name = inputView.readLineName();
+            Station upBoundStation = inputView.readUpBoundStation();
         }
     }
 }
