@@ -34,4 +34,15 @@ public class InputView {
             return inputWantedStationFeature();
         }
     }
+
+    public Station inputStationForRegister() {
+        final Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        try {
+            return new Station(name);
+        } catch (IllegalArgumentException e) {
+            outputView.printException(e);
+            return inputStationForRegister();
+        }
+    }
 }

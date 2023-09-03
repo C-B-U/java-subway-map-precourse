@@ -5,7 +5,7 @@ import subway.domain.ErrorMessage;
 import java.util.Arrays;
 
 public enum StationFeatures {
-    MANAGEMENT("1", "역 등록"),
+    REGISTER("1", "역 등록"),
     DELETE("2", "역 삭제"),
     VIEW("3", "역 조회"),
     RETURN("B", "돌아가기");
