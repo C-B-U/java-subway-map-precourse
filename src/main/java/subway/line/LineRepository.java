@@ -30,15 +30,15 @@ public class LineRepository {
                 .anyMatch(line -> line.isSame(name));
     }
 
-    public static boolean deleteLineByName(Name name) {
+    public static void deleteLineByName(Name name) {
         Line line = findLineByName(name);
-        return lines.remove(line);
+        lines.remove(line);
     }
 
     private static Line findLineByName(Name name) {
         return lines.stream()
                 .filter(line -> line.isSame(name))
                 .findAny()
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException(ExceptionMessage.NOT_EXISTENT_LINE.toString()));
     }
 }
