@@ -1,5 +1,6 @@
 package subway.view;
 
+import subway.domain.Line;
 import subway.domain.Station;
 import subway.domain.features.LineFeatures;
 import subway.domain.features.MainFeatures;
@@ -51,6 +52,17 @@ public class InputView {
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
             return inputWantedLineFeature();
+        }
+    }
+
+    public Line inputLineName() {
+        final Scanner scanner = new Scanner(System.in);
+        String name = scanner.nextLine();
+        try {
+            return new Line(name);
+        } catch (IllegalArgumentException e) {
+            outputView.printException(e);
+            return inputLineName();
         }
     }
 }

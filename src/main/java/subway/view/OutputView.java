@@ -86,4 +86,9 @@ public class OutputView {
         printStationManagementFeature();
         printSelectWantedFeature();
     }
+
+    public void printWantedLineForRegister() {
+        printNewLine();
+        System.out.println(ProcessMessage.INPUT_REGISTER_LINE);
+    }
 }
