@@ -1,5 +1,9 @@
 package subway.station;
 
+import subway.constant.ExceptionMessage;
+
+import java.util.Arrays;
+
 public enum StationOption {
 
     CREATE("1", "역 등록"),
@@ -14,6 +18,13 @@ public enum StationOption {
     StationOption(String option, String title) {
         this.option = option;
         this.title = title;
+    }
+
+    public static StationOption getStationOption(String option) {
+        return Arrays.stream(StationOption.values())
+                .filter(value -> option.equals(value.option))
+                .findAny()
+                .orElseThrow(() -> new IllegalArgumentException(ExceptionMessage.INVALID_OPTION.toString()));
     }
 
     public String getOption() {

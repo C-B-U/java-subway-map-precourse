@@ -15,5 +15,6 @@ public class StationController {
 
     public void start() {
         outputView.printStationOption();
+        StationOption option = inputView.readStationOption();
     }
 }

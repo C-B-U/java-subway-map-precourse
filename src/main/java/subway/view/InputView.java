@@ -1,6 +1,7 @@
 package subway.view;
 
 import subway.main.MainOption;
+import subway.station.StationOption;
 
 import java.util.Scanner;
 
@@ -16,6 +17,13 @@ public class InputView {
     public MainOption readOption() {
         outputView.printOptions();
         MainOption option = MainOption.getMainOption(scanner.nextLine());
+        outputView.printNewLine();
+        return option;
+    }
+
+    public StationOption readStationOption() {
+        outputView.printOptions();
+        StationOption option = StationOption.getStationOption(scanner.nextLine());
         outputView.printNewLine();
         return option;
     }
