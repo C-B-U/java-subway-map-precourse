@@ -33,6 +33,10 @@ public class LineOutputView {
         System.out.println(OutputMessage.UP_BOUND_STATION);
     }
 
+    public void printDescendingStation() {
+        System.out.println(OutputMessage.DESCENDING_STATION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }

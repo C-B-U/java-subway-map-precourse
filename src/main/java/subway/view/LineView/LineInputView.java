@@ -36,4 +36,11 @@ public class LineInputView {
         outputView.printNewLine();
         return station;
     }
+
+    public Station readDescendingStation() {
+        outputView.printDescendingStation();
+        Station station = StationRepository.findByName(new Name(scanner.nextLine()));
+        outputView.printNewLine();
+        return station;
+    }
 }

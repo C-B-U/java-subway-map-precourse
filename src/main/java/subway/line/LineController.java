@@ -27,6 +27,7 @@ public class LineController {
         if (option.isCreate()) {
            Name name = inputView.readLineName();
             Station upBoundStation = inputView.readUpBoundStation();
+            Station descendingStation = inputView.readDescendingStation();
         }
     }
 }

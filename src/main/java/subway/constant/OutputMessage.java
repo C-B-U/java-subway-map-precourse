@@ -10,7 +10,8 @@ public enum OutputMessage {
     READ_STATION("역 목록"),
     LINE_MANAGEMENT_SCREEN("노선 관리 화면"),
     CREATE_LINE("등록할 노선 이름을 입력하세요."),
-    UP_BOUND_STATION("등록할 노선의 상행 종점역 이름을 입력하세요.");
+    UP_BOUND_STATION("등록할 노선의 상행 종점역 이름을 입력하세요."),
+    DESCENDING_STATION("등록할 노선의 하행 종점역 이름을 입력하세요.");
 
     private static final String PREFIX = "## ";
     private final String message;
