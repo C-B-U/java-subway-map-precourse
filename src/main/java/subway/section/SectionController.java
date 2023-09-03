@@ -16,5 +16,6 @@ public class SectionController {
     }
 
     public void start() {
+        outputView.printSectionOption();
     }
 }
