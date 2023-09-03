@@ -24,6 +24,7 @@ public class StationController {
     private void createStation(StationOption option) {
         if (option.isCreate()) {
             stationService.create(inputView.readStationName());
+            outputView.printCompleteStationCreate();
         }
     }
 }

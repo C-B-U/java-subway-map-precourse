@@ -1,5 +1,6 @@
 package subway.view;
 
+import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
 import subway.main.MainOption;
@@ -41,6 +42,10 @@ public class OutputView {
 
     public void printStationCreation() {
         System.out.println(OutputMessage.CREATE_STATION);
+    }
+
+    public void printCompleteStationCreate() {
+        System.out.println(InformationMessage.COMPLETE_CREATE_STATION);
     }
 
     public void printNewLine() {
