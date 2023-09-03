@@ -31,6 +31,10 @@ public enum MainOption {
         return this == MainOption.STATION_MANAGEMENT;
     }
 
+    public boolean isLineManagement() {
+        return this == MainOption.LINE_MANAGEMENT;
+    }
+
     public String getOption() {
         return option;
     }
