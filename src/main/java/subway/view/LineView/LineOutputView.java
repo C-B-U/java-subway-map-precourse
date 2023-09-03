@@ -1,5 +1,6 @@
 package subway.view.LineView;
 
+import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
 import subway.line.LineOption;
@@ -35,6 +36,10 @@ public class LineOutputView {
 
     public void printDescendingStation() {
         System.out.println(OutputMessage.DESCENDING_STATION);
+    }
+
+    public void printCreateLine() {
+        System.out.println(InformationMessage.COMPLETE_CREATE_STATION);
     }
 
     public void printNewLine() {

@@ -31,6 +31,7 @@ public class LineController {
             Station upBoundStation = inputView.readUpBoundStation();
             Station descendingStation = inputView.readDescendingStation();
             lineService.create(name, upBoundStation, descendingStation);
+            outputView.printCreateLine();
         }
     }
 }
