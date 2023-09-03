@@ -24,7 +24,7 @@ public enum MainFeatures {
         return Arrays.stream(values())
                 .filter(value -> value.number.equals(number))
                 .findAny()
-                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.WRONG_MAIN_FEATURE.toString()));
+                .orElseThrow(() -> new IllegalArgumentException(ErrorMessage.WRONG_FEATURE_NUMBER.toString()));
     }
 
     @Override
