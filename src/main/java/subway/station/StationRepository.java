@@ -38,6 +38,6 @@ public class StationRepository {
         return stations.stream()
                 .filter(station -> station.isSame(name))
                 .findAny()
-                .orElseThrow();
+                .orElseThrow(() -> new IllegalArgumentException(ExceptionMessage.NOT_EXISTENT_STATION.toString()));
     }
 }
