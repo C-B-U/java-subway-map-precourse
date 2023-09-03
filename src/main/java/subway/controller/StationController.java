@@ -1,5 +1,7 @@
 package subway.controller;
 
+import subway.domain.ProcessMessage;
+import subway.domain.features.StationFeatures;
 import subway.view.InputView;
 import subway.view.OutputView;
 
@@ -9,5 +11,13 @@ public class StationController {
 
     public void start() {
         outputView.printStationManagementScreen();
+        StationFeatures stationFeatures = inputView.inputWantedStationFeature();
+        if(stationFeatures != StationFeatures.RETURN) {
+            execute(stationFeatures);
+        }
+    }
+
+    public void execute(StationFeatures stationFeatures) {
+
     }
 }
