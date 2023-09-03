@@ -1,6 +1,5 @@
 package subway.main;
 
-import subway.line.Line;
 import subway.line.LineRepository;
 import subway.line.StopStations;
 import subway.station.Name;
@@ -39,23 +38,20 @@ public class Initialization {
         List<Station> stopStation = Arrays.stream(LINE_TWO_STATIONS.split(REGEX))
                 .map(name -> StationRepository.findByName(new Name(name)))
                 .collect(Collectors.toList());
-        Line line = new Line(LINE_TWO, new StopStations(stopStation));
-        LineRepository.addLine(line);
+        LineRepository.addLine(new Name(LINE_TWO), new StopStations(stopStation));
     }
 
     private static void initLineThree() {
         List<Station> stopStation = Arrays.stream(LINE_THREE_STATIONS.split(REGEX))
                 .map(name -> StationRepository.findByName(new Name(name)))
                 .collect(Collectors.toList());
-        Line line = new Line(LINE_THREE, new StopStations(stopStation));
-        LineRepository.addLine(line);
+        LineRepository.addLine(new Name(LINE_THREE), new StopStations(stopStation));
     }
 
     private static void initLineDX() {
         List<Station> stopStation = Arrays.stream(LINE_DX_STATIONS.split(REGEX))
                 .map(name -> StationRepository.findByName(new Name(name)))
                 .collect(Collectors.toList());
-        Line line = new Line(LINE_DX, new StopStations(stopStation));
-        LineRepository.addLine(line);
+        LineRepository.addLine(new Name(LINE_DX), new StopStations(stopStation));
     }
 }

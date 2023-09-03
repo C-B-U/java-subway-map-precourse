@@ -1,16 +1,18 @@
 package subway.line;
 
+import subway.station.Name;
+
 public class Line {
 
-    private final String name;
+    private final Name name;
     private final StopStations stopStations;
 
-    public Line(String name, StopStations stopStations) {
+    public Line(Name name, StopStations stopStations) {
         this.name = name;
         this.stopStations = stopStations;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 }

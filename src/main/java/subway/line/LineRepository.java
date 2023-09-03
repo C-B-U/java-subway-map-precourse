@@ -1,5 +1,7 @@
 package subway.line;
 
+import subway.station.Name;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -12,11 +14,11 @@ public class LineRepository {
         return Collections.unmodifiableList(lines);
     }
 
-    public static void addLine(Line line) {
-        lines.add(line);
+    public static void addLine(Name name, StopStations stations) {
+        lines.add(new Line(name, stations));
     }
 
     public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
+        return lines.removeIf(line -> Objects.equals(line, name));
     }
 }
