@@ -24,6 +24,7 @@ public class LineController {
         LineOption option = inputView.readOption();
         createLine(option);
         deleteLine(option);
+        printLines(option);
     }
 
     public void createLine(LineOption option) {
@@ -40,6 +41,12 @@ public class LineController {
         if (option.isDelete()) {
             lineService.delete(inputView.readDeleteStation());
             outputView.printDeleteLine();
+        }
+    }
+
+    public void printLines(LineOption option) {
+        if (option.isRead()) {
+            outputView.printLines();
         }
     }
 }

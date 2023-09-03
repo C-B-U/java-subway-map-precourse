@@ -4,7 +4,7 @@ public enum InformationMessage {
 
     COMPLETE_CREATE_STATION("지하철 역이 등록되었습니다."),
     COMPLETE_DELETE_STATION("지하철 역이 삭제되었습니다."),
-    STATION_ELEMENT("%s\n"),
+    READ_ELEMENT("%s\n"),
     CREATE_LINE("지하철 노선이 등록되었습니다."),
     DELETE_LINE("지하철 노선이 삭제되었습니다.");
 

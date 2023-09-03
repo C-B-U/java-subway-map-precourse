@@ -3,7 +3,9 @@ package subway.view.LineView;
 import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
+import subway.line.Line;
 import subway.line.LineOption;
+import subway.line.LineRepository;
 
 import java.util.Arrays;
 
@@ -52,5 +54,17 @@ public class LineOutputView {
 
     public void printNewLine() {
         System.out.println();
+    }
+
+    public void printLines() {
+        StringBuilder stringBuilder = new StringBuilder();
+        LineRepository.lines()
+                .forEach(line -> appendStations(stringBuilder, line));
+        System.out.println(OutputMessage.READ_LINE);
+        System.out.println(stringBuilder);
+    }
+
+    private void appendStations(StringBuilder stringBuilder, Line line) {
+        stringBuilder.append(line);
     }
 }

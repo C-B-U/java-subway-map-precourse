@@ -16,6 +16,6 @@ public class Station {
 
     @Override
     public String toString() {
-        return String.format(InformationMessage.STATION_ELEMENT.toString(), name.toString());
+        return String.format(InformationMessage.READ_ELEMENT.toString(), name.toString());
     }
 }

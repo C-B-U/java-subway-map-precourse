@@ -1,5 +1,6 @@
 package subway.line;
 
+import subway.constant.InformationMessage;
 import subway.station.Name;
 
 public class Line {
@@ -16,7 +17,8 @@ public class Line {
         return name.equals(this.name);
     }
 
-    public Name getName() {
-        return name;
+    @Override
+    public String toString() {
+        return String.format(InformationMessage.READ_ELEMENT.toString(), name);
     }
 }
