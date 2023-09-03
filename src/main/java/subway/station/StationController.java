@@ -21,7 +21,7 @@ public class StationController {
 
     private void createStation(StationOption option) {
         if (option.isCreate()) {
-            String name = inputView.readStationName();
+            Name name = inputView.readStationName();
         }
     }
 }

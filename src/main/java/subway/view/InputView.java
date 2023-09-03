@@ -1,6 +1,7 @@
 package subway.view;
 
 import subway.main.MainOption;
+import subway.station.Name;
 import subway.station.StationOption;
 
 import java.util.Scanner;
@@ -28,10 +29,10 @@ public class InputView {
         return option;
     }
 
-    public String readStationName() {
+    public Name readStationName() {
         outputView.printStationCreation();
         String name = scanner.nextLine();
         outputView.printNewLine();
-        return name;
+        return new Name(name);
     }
 }
