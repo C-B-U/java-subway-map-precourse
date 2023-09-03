@@ -2,10 +2,14 @@ package subway.view;
 
 import subway.domain.InformationMessage;
 import subway.domain.ProcessMessage;
+import subway.domain.Station;
 import subway.domain.features.MainFeatures;
 import subway.domain.features.StationFeatures;
 
+import java.util.List;
+
 public class OutputView {
+    private static final String INFO_TAG = "[INFO] ";
 
     public void printMainScreen() {
         System.out.println(ProcessMessage.MAIN_SCREEN);
@@ -63,6 +67,16 @@ public class OutputView {
     public void printInformation(InformationMessage message) {
         printNewLine();
         System.out.println(message.toString());
+        printNewLine();
+    }
+
+    public void printWantedStationForView() {
+        printNewLine();
+        System.out.println(ProcessMessage.VIEW_STATION);
+    }
+
+    public void printStations(List<Station> stations) {
+        stations.forEach(station -> System.out.println(INFO_TAG + station.getName()));
         printNewLine();
     }
 }

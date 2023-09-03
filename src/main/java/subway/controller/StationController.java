@@ -1,5 +1,6 @@
 package subway.controller;
 
+import subway.domain.InformationMessage;
 import subway.domain.ProcessMessage;
 import subway.domain.features.StationFeatures;
 import subway.service.StationService;
@@ -22,6 +23,7 @@ public class StationController {
     public void execute(StationFeatures stationFeatures) {
         executeStationRegistration(stationFeatures);
         executeStationDeletion(stationFeatures);
+        executeStationView(stationFeatures);
     }
 
     private void executeStationRegistration(StationFeatures stationFeatures) {
@@ -47,4 +49,12 @@ public class StationController {
             }
         }
     }
+
+    private void executeStationView(StationFeatures stationFeatures) {
+        if(stationFeatures == StationFeatures.VIEW) {
+            outputView.printWantedStationForView();
+            stationService.viewStation();
+        }
+    }
+
 }

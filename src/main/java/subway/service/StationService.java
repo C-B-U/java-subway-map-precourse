@@ -14,3 +14,8 @@ public class StationService {
     public void deleteStation(Station station) {
         StationRepository.deleteStation(station);
     }
+
+    public void viewStation() {
+        outputView.printStations(StationRepository.stations());
+    }
+}

@@ -6,6 +6,7 @@ public enum ProcessMessage {
     SELECT_WANTED_FEATURE("원하는 기능을 선택하세요."),
     INPUT_REGISTER_STATION("등록할 역 이름을 입력하세요."),
     INPUT_DELETE_STATION("삭제할 역 이름을 입력하세요."),
+    VIEW_STATION("역 목록");
 
     private static final String PREFIX = "## ";
     private final String message;
