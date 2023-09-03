@@ -7,7 +7,8 @@ public enum OutputMessage {
     STATION_OPTION_SELECT("역 관리 화면"),
     CREATE_STATION("등록할 역 이름을 입력하세요."),
     DELETE_STATION("삭제할 역 이름을 입력하세요."),
-    READ_STATION("역 목록");
+    READ_STATION("역 목록"),
+    LINE_MANAGEMENT_SCREEN("노선 관리 화면");
 
     private static final String PREFIX = "## ";
     private final String message;

@@ -38,7 +38,7 @@ public class OutputView {
                                 .append(value.getTitle())
                                 .append(PrintElement.NEW_LINE)
                 );
-        System.out.println(OutputMessage.MAIN_MESSAGE);
+        System.out.println(OutputMessage.STATION_OPTION_SELECT);
         System.out.println(stringBuilder);
     }
 

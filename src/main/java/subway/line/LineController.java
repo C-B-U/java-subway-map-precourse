@@ -16,6 +16,6 @@ public class LineController {
     }
 
     public void start() {
-
+        outputView.printLineOption();
     }
 }
