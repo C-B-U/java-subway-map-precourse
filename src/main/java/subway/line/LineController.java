@@ -23,6 +23,7 @@ public class LineController {
         outputView.printLineOption();
         LineOption option = inputView.readOption();
         createLine(option);
+        deleteLine(option);
     }
 
     public void createLine(LineOption option) {
@@ -32,6 +33,12 @@ public class LineController {
             Station descendingStation = inputView.readDescendingStation();
             lineService.create(name, upBoundStation, descendingStation);
             outputView.printCreateLine();
+        }
+    }
+
+    public void deleteLine(LineOption option) {
+        if (option.isDelete()) {
+            inputView.readDeleteStation();
         }
     }
 }

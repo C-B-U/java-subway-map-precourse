@@ -42,6 +42,10 @@ public class LineOutputView {
         System.out.println(InformationMessage.COMPLETE_CREATE_STATION);
     }
 
+    public void printReadDeleteLine() {
+        System.out.println(OutputMessage.DELETE_LINE);
+    }
+
     public void printNewLine() {
         System.out.println();
     }

@@ -43,4 +43,11 @@ public class LineInputView {
         outputView.printNewLine();
         return station;
     }
+
+    public Name readDeleteStation() {
+        outputView.printReadDeleteLine();
+        Name name = new Name(scanner.nextLine());
+        outputView.printNewLine();
+        return name;
+    }
 }
