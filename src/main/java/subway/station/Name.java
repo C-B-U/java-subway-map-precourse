@@ -17,4 +17,8 @@ public class Name {
             throw new IllegalArgumentException(ExceptionMessage.INVALID_LENGTH.toString());
         }
     }
+
+    public boolean equals(Name name) {
+        return value.equals(name.value);
+    }
 }

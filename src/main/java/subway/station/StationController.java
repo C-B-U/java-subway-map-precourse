@@ -7,10 +7,12 @@ public class StationController {
 
     private final OutputView outputView;
     private final InputView inputView;
+    private final StationService stationService;
 
     public StationController(OutputView outputView, InputView inputView) {
         this.outputView = outputView;
         this.inputView = inputView;
+        this.stationService = new StationService();
     }
 
     public void start() {
@@ -21,7 +23,7 @@ public class StationController {
 
     private void createStation(StationOption option) {
         if (option.isCreate()) {
-            Name name = inputView.readStationName();
+            stationService.create(inputView.readStationName());
         }
     }
 }

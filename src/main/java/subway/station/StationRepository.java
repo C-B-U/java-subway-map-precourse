@@ -12,15 +12,15 @@ public class StationRepository {
         return Collections.unmodifiableList(stations);
     }
 
-    public static void addStation(Station station) {
-        stations.add(station);
+    public static void addStation(Name name) {
+        stations.add(new Station(name));
     }
 
     public static boolean deleteStation(String name) {
         return stations.removeIf(station -> Objects.equals(station.getName(), name));
     }
 
-    public static Station findByName(String name) {
+    public static Station findByName(Name name) {
         return stations.stream()
                 .filter(station -> station.isSame(name))
                 .findAny()
