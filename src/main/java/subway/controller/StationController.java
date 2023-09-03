@@ -21,14 +21,27 @@ public class StationController {
 
     public void execute(StationFeatures stationFeatures) {
         executeStationRegistration(stationFeatures);
+        executeStationDeletion(stationFeatures);
     }
 
     private void executeStationRegistration(StationFeatures stationFeatures) {
         if(stationFeatures == StationFeatures.REGISTER) {
             outputView.printWantedStationForRegister();
             try {
-                stationService.registerStation(inputView.inputStationForRegister());
-                outputView.printInformationAboutStationRegistration();
+                stationService.registerStation(inputView.inputStationName());
+                outputView.printInformation(InformationMessage.REGISTER_STATION);
+            } catch (IllegalArgumentException e) {
+                outputView.printException(e);
+            }
+        }
+    }
+
+    private void executeStationDeletion(StationFeatures stationFeatures) {
+        if(stationFeatures == StationFeatures.DELETE) {
+            outputView.printWantedStationForDelete();
+            try {
+                stationService.deleteStation(inputView.inputStationName());
+                outputView.printInformation(InformationMessage.DELETE_STATION);
             } catch (IllegalArgumentException e) {
                 outputView.printException(e);
             }

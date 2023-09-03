@@ -35,14 +35,14 @@ public class InputView {
         }
     }
 
-    public Station inputStationForRegister() {
+    public Station inputStationName() {
         final Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         try {
             return new Station(name);
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
-            return inputStationForRegister();
+            return inputStationName();
         }
     }
 }

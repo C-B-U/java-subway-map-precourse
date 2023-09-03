@@ -60,9 +60,9 @@ public class OutputView {
         System.out.println(ProcessMessage.INPUT_DELETE_STATION);
     }
 
-    public void printInformationAboutStationRegistration() {
+    public void printInformation(InformationMessage message) {
         printNewLine();
-        System.out.println(InformationMessage.REGISTER_STATION);
+        System.out.println(message.toString());
         printNewLine();
     }
 }

@@ -37,7 +37,14 @@ public class StationRepository {
         }
     }
 
-    public static boolean deleteStation(String name) {
-        return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    public static boolean deleteStation(Station station) {
+        validateExistStation(station);
+        return stations.removeIf(value -> Objects.equals(value.getName(), station.getName()));
+    }
+
+    private static void validateExistStation(Station station) {
+        if (stations.stream().noneMatch(value -> value.getName().equals(station.getName()))) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_EXIST_STATION.toString());
+        }
     }
 }

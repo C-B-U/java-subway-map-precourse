@@ -10,4 +10,7 @@ public class StationService {
     public void registerStation(Station station) {
         StationRepository.addStation(station);
     }
-}
+
+    public void deleteStation(Station station) {
+        StationRepository.deleteStation(station);
+    }
