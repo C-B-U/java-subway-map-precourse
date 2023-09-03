@@ -5,7 +5,6 @@ import subway.constant.ExceptionMessage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
@@ -30,8 +29,9 @@ public class StationRepository {
                 .anyMatch(station -> station.isSame(name));
     }
 
-    public static boolean deleteStation(String name) {
-        return stations.removeIf(station -> Objects.equals(station.getName(), name));
+    public static void deleteStation(Name name) {
+        Station station = findByName(name);
+        stations.remove(station);
     }
 
     public static Station findByName(Name name) {

@@ -19,12 +19,19 @@ public class StationController {
         outputView.printStationOption();
         StationOption option = inputView.readStationOption();
         createStation(option);
+        deleteStation(option);
     }
 
     private void createStation(StationOption option) {
         if (option.isCreate()) {
             stationService.create(inputView.readStationName());
             outputView.printCompleteStationCreate();
+        }
+    }
+
+    private void deleteStation(StationOption option) {
+        if (option.isDelete()) {
+            stationService.delete(inputView.readDeleteStationName());
         }
     }
 }
