@@ -1,5 +1,6 @@
 package subway.repository;
 
+import subway.domain.ErrorMessage;
 import subway.domain.Line;
 import subway.domain.Station;
 
@@ -26,7 +27,14 @@ public class StationRepository {
     }
 
     public static void addStation(Station station) {
+        validateDuplicateStation(station);
         stations.add(station);
+    }
+
+    private static void validateDuplicateStation(Station station) {
+        if (stations.stream().anyMatch(value -> value.getName().equals(station.getName()))) {
+            throw new IllegalArgumentException(ErrorMessage.DUPLICATE_STATION.toString());
+        }
     }
 
     public static boolean deleteStation(String name) {
