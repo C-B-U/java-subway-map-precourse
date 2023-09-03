@@ -1,5 +1,7 @@
 package subway.station;
 
+import subway.constant.InformationMessage;
+
 public class Station {
 
     private final Name name;
@@ -8,11 +10,12 @@ public class Station {
         this.name = name;
     }
 
-    public Name getName() {
-        return name;
-    }
-
     public boolean isSame(Name name) {
         return name.equals(this.name);
+    }
+
+    @Override
+    public String toString() {
+        return String.format(InformationMessage.STATION_ELEMENT.toString(), name.toString());
     }
 }

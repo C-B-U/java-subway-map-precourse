@@ -21,4 +21,9 @@ public class Name {
     public boolean equals(Name name) {
         return value.equals(name.value);
     }
+
+    @Override
+    public String toString() {
+        return value;
+    }
 }
