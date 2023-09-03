@@ -2,6 +2,7 @@ package subway.view;
 
 import subway.domain.ProcessMessage;
 import subway.domain.features.MainFeatures;
+import subway.domain.features.StationFeatures;
 
 public class OutputView {
 
@@ -25,5 +26,19 @@ public class OutputView {
 
     public void printException(IllegalArgumentException e) {
         System.out.println(e.getMessage());
+    }
+
+    public void printStationManagementScreen() {
+        printNewLine();
+        System.out.println(ProcessMessage.STATION_MANAGEMENT_SCREEN);
+        printStationManagement();
+    }
+
+    private void printStationManagement() {
+        System.out.println(StationFeatures.MANAGEMENT);
+        System.out.println(StationFeatures.DELETE);
+        System.out.println(StationFeatures.VIEW);
+        System.out.println(StationFeatures.RETURN);
+        printNewLine();
     }
 }
