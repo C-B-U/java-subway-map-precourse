@@ -17,4 +17,10 @@ public class StationController {
         outputView.printStationOption();
         StationOption option = inputView.readStationOption();
     }
+
+    private void createStation(StationOption option) {
+        if (option.isCreate()) {
+            // TODO
+        }
+    }
 }

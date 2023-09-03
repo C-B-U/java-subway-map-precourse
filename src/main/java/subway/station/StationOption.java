@@ -27,6 +27,10 @@ public enum StationOption {
                 .orElseThrow(() -> new IllegalArgumentException(ExceptionMessage.INVALID_OPTION.toString()));
     }
 
+    public boolean isCreate() {
+        return this == CREATE;
+    }
+
     public String getOption() {
         return option;
     }
