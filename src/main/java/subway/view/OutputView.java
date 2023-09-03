@@ -1,5 +1,6 @@
 package subway.view;
 
+import subway.domain.InformationMessage;
 import subway.domain.ProcessMessage;
 import subway.domain.features.MainFeatures;
 import subway.domain.features.StationFeatures;
@@ -52,5 +53,16 @@ public class OutputView {
     public void printWantedStationForRegister() {
         printNewLine();
         System.out.println(ProcessMessage.INPUT_REGISTER_STATION);
+    }
+
+    public void printWantedStationForDelete() {
+        printNewLine();
+        System.out.println(ProcessMessage.INPUT_DELETE_STATION);
+    }
+
+    public void printInformationAboutStationRegistration() {
+        printNewLine();
+        System.out.println(InformationMessage.REGISTER_STATION);
+        printNewLine();
     }
 }

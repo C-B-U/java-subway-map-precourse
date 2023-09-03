@@ -26,7 +26,12 @@ public class StationController {
     private void executeStationRegistration(StationFeatures stationFeatures) {
         if(stationFeatures == StationFeatures.REGISTER) {
             outputView.printWantedStationForRegister();
-            stationService.registerStation(inputView.inputStationForRegister());
+            try {
+                stationService.registerStation(inputView.inputStationForRegister());
+                outputView.printInformationAboutStationRegistration();
+            } catch (IllegalArgumentException e) {
+                outputView.printException(e);
+            }
         }
     }
 }
