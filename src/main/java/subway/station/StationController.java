@@ -16,11 +16,12 @@ public class StationController {
     public void start() {
         outputView.printStationOption();
         StationOption option = inputView.readStationOption();
+        createStation(option);
     }
 
     private void createStation(StationOption option) {
         if (option.isCreate()) {
-            // TODO
+            String name = inputView.readStationName();
         }
     }
 }

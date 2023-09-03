@@ -39,6 +39,10 @@ public class OutputView {
         System.out.println(stringBuilder);
     }
 
+    public void printStationCreation() {
+        System.out.println(OutputMessage.CREATE_STATION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }

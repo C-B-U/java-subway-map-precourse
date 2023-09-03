@@ -27,4 +27,11 @@ public class InputView {
         outputView.printNewLine();
         return option;
     }
+
+    public String readStationName() {
+        outputView.printStationCreation();
+        String name = scanner.nextLine();
+        outputView.printNewLine();
+        return name;
+    }
 }
