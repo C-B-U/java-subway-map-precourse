@@ -35,6 +35,10 @@ public class SectionOutputView {
         System.out.println(OutputMessage.SECTION_STATION);
     }
 
+    public void printReadIndex() {
+        System.out.println(OutputMessage.SECTION_INDEX);
+    }
+
     public void printNewLine() {
         System.out.println();
     }

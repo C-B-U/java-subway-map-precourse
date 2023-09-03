@@ -33,7 +33,14 @@ public class SectionInputView {
     public Station readStationName() {
         outputView.printReadStationName();
         Name name = new Name(scanner.nextLine());
-        outputView.printReadLineName();
+        outputView.printNewLine();
         return StationRepository.findByName(name);
+    }
+
+    public int readIndex() {
+        outputView.printReadIndex();
+        int index = scanner.nextInt();
+        outputView.printNewLine();
+        return index;
     }
 }

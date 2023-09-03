@@ -16,7 +16,8 @@ public enum OutputMessage {
     READ_LINE("노선 목록"),
     SECTION_MANAGEMENT_SCREEN("구간 관리 화면"),
     SECTION_LINE("노선을 입력하세요."),
-    SECTION_STATION("역이름을 입력하세요.");
+    SECTION_STATION("역이름을 입력하세요."),
+    SECTION_INDEX("순서를 입력하세요.");
 
     private static final String PREFIX = "## ";
     private final String message;
