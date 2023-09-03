@@ -26,7 +26,7 @@ public class LineOutputView {
     }
 
     public void printReadLineName() {
-        System.out.println(OutputMessage.MAIN_MESSAGE);
+        System.out.println(OutputMessage.CREATE_LINE);
     }
 
     public void printNewLine() {

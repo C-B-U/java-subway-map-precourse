@@ -18,5 +18,13 @@ public class LineController {
     public void start() {
         outputView.printLineOption();
         LineOption option = inputView.readOption();
+        createLine(option);
+    }
+
+    public void createLine(LineOption option) {
+        if (option.isCreate()) {
+
+           inputView.readLineName();
+        }
     }
 }
