@@ -2,17 +2,17 @@ package subway.station;
 
 public class Station {
 
-    private final String name;
+    private final Name name;
 
-    public Station(String name) {
+    public Station(Name name) {
         this.name = name;
     }
 
-    public String getName() {
+    public Name getName() {
         return name;
     }
 
-    public boolean isSame(String name) {
+    public boolean isSame(Name name) {
         return name.equals(this.name);
     }
 }
