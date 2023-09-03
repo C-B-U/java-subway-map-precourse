@@ -17,5 +17,6 @@ public class LineController {
 
     public void start() {
         outputView.printLineOption();
+        LineOption option = inputView.readOption();
     }
 }

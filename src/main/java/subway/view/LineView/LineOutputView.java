@@ -20,4 +20,16 @@ public class LineOutputView {
         System.out.println(OutputMessage.LINE_MANAGEMENT_SCREEN);
         System.out.println(stringBuilder);
     }
+
+    public void printOptions() {
+        System.out.println(OutputMessage.OPTION_SELECT);
+    }
+
+    public void printReadLineName() {
+        System.out.println(OutputMessage.MAIN_MESSAGE);
+    }
+
+    public void printNewLine() {
+        System.out.println();
+    }
 }
