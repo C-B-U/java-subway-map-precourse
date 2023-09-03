@@ -79,4 +79,11 @@ public class OutputView {
         stations.forEach(station -> System.out.println(INFO_TAG + station.getName()));
         printNewLine();
     }
+
+    public void printLineManagementScreen() {
+        printNewLine();
+        System.out.println(ProcessMessage.LINE_MANAGEMENT_SCREEN);
+        printStationManagementFeature();
+        printSelectWantedFeature();
+    }
 }
