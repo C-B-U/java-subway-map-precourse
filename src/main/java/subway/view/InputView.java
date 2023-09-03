@@ -35,4 +35,11 @@ public class InputView {
         outputView.printNewLine();
         return new Name(name);
     }
+
+    public Name readDeleteStationName() {
+        outputView.printDeleteStation();
+        String name = scanner.nextLine();
+        outputView.printNewLine();
+        return new Name(name);
+    }
 }

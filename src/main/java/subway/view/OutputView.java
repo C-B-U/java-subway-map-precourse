@@ -48,6 +48,10 @@ public class OutputView {
         System.out.println(InformationMessage.COMPLETE_CREATE_STATION);
     }
 
+    public void printDeleteStation() {
+        System.out.println(OutputMessage.DELETE_STATION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }
