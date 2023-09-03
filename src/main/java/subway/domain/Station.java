@@ -18,7 +18,7 @@ public class Station {
 
     private void validateStationNameComponent(String name) {
         if(!name.endsWith(STATION_UNIT)) {
-            throw new IllegalArgumentException(ErrorMessage.WRONG_STATION_NAME_COMPONENT.toString());
+            throw new IllegalArgumentException(ErrorMessage.WRONG_NAME_COMPONENT.toString());
         }
     }
 
