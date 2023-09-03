@@ -3,7 +3,6 @@ package subway.view.section;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
 import subway.section.SectionOption;
-import subway.station.StationOption;
 
 import java.util.Arrays;
 
@@ -22,5 +21,13 @@ public class SectionOutputView {
             .append(PrintElement.COMMA)
             .append(option.getTitle())
             .append(PrintElement.NEW_LINE);
+    }
+
+    public void printOptions() {
+        System.out.println(OutputMessage.OPTION_SELECT);
+    }
+
+    public void printNewLine() {
+        System.out.println();
     }
 }
