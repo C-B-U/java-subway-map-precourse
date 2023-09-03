@@ -46,6 +46,10 @@ public class LineOutputView {
         System.out.println(OutputMessage.DELETE_LINE);
     }
 
+    public void printDeleteLine() {
+        System.out.println(InformationMessage.DELETE_LINE);
+    }
+
     public void printNewLine() {
         System.out.println();
     }
