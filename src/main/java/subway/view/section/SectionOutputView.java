@@ -1,5 +1,6 @@
 package subway.view.section;
 
+import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;
 import subway.constant.PrintElement;
 import subway.section.SectionOption;
@@ -37,6 +38,10 @@ public class SectionOutputView {
 
     public void printReadIndex() {
         System.out.println(OutputMessage.SECTION_INDEX);
+    }
+
+    public void printCreateSection() {
+        System.out.println(InformationMessage.CREATE_SECTION);
     }
 
     public void printNewLine() {
