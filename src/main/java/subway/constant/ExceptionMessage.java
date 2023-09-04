@@ -13,6 +13,7 @@ public enum ExceptionMessage {
     NOT_EXISTING_STATION("해당 노선에 입력하신 역이 존재하지 않습니다."),
     OUT_OF_RANGE("해당 순서에 역을 추가할 수 없습니다.");
 
+    private static final String PREFIX = "[ERROR] ";
     private final String message;
 
     ExceptionMessage(String message) {
@@ -21,6 +22,6 @@ public enum ExceptionMessage {
 
     @Override
     public String toString() {
-        return message;
+        return PREFIX + message;
     }
 }

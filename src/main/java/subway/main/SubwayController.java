@@ -30,11 +30,15 @@ public class SubwayController {
     public void start() {
         Initialization.init();
         while (true) {
-            MainOption option = readOption();
-            if (option.isQuit()) {
-                break;
+            try {
+                MainOption option = readOption();
+                if (option.isQuit()) {
+                    break;
+                }
+                link(option);
+            } catch (IllegalArgumentException exception) {
+                outputView.printExceptionMessage(exception.getMessage());
             }
-            link(option);
         }
     }
 

@@ -20,12 +20,16 @@ public class SectionController {
 
     public void start() {
         while (true) {
-            SectionOption option = readOption();
-            if (option.isBack()) {
-                break;
+            try {
+                SectionOption option = readOption();
+                if (option.isBack()) {
+                    break;
+                }
+                createSection(option);
+                deleteSection(option);
+            } catch (IllegalArgumentException exception) {
+                outputView.printExceptionMessage(exception.getMessage());
             }
-            createSection(option);
-            deleteSection(option);
         }
     }
 

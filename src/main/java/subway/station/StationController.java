@@ -19,13 +19,17 @@ public class StationController {
 
     public void start() {
         while (true) {
-            StationOption option = readStationOption();
-            if (option.isBack()) {
-                break;
+            try {
+                StationOption option = readStationOption();
+                if (option.isBack()) {
+                    break;
+                }
+                createStation(option);
+                deleteStation(option);
+                printStation(option);
+            } catch (IllegalArgumentException exception) {
+                outputView.printExceptionMessage(exception.getMessage());
             }
-            createStation(option);
-            deleteStation(option);
-            printStation(option);
         }
     }
 

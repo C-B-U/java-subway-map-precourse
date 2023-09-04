@@ -67,4 +67,10 @@ public class LineOutputView {
     private void appendStations(StringBuilder stringBuilder, Line line) {
         stringBuilder.append(line);
     }
+
+    public void printExceptionMessage(String message) {
+        System.out.println();
+        System.out.println(message);
+        System.out.println();
+    }
 }

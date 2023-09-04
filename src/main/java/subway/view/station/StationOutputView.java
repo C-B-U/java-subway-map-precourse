@@ -59,4 +59,10 @@ public class StationOutputView {
     public void printNewLine() {
         System.out.println();
     }
+
+    public void printExceptionMessage(String message) {
+        System.out.println();
+        System.out.println(message);
+        System.out.println();
+    }
 }

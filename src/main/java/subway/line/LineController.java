@@ -21,13 +21,17 @@ public class LineController {
 
     public void start() {
         while (true) {
-            LineOption option = readOption();
-            if (option.isBack()) {
-                break;
+            try {
+                LineOption option = readOption();
+                if (option.isBack()) {
+                    break;
+                }
+                createLine(option);
+                deleteLine(option);
+                printLines(option);
+            } catch (IllegalArgumentException exception) {
+                outputView.printExceptionMessage(exception.getMessage());
             }
-            createLine(option);
-            deleteLine(option);
-            printLines(option);
         }
     }
 
