@@ -22,6 +22,7 @@ public class SectionController {
         outputView.printSectionOption();
         SectionOption option = inputView.readOption();
         createSection(option);
+        deleteSection(option);
     }
 
     private void createSection(SectionOption option) {
@@ -31,6 +32,15 @@ public class SectionController {
             int index = inputView.readIndex();
             sectionService.create(lineName, stationName, index);
             outputView.printCreateSection();
+        }
+    }
+
+    private void deleteSection(SectionOption option) {
+        if (option.isDelete()) {
+            Name lineName = inputView.readDeleteLine();
+            Name stationName = inputView.readDeleteStation();
+            sectionService.delete(lineName, stationName);
+            outputView.printDeleteSection();
         }
     }
 }
