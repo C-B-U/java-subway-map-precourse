@@ -48,4 +48,11 @@ public class SectionInputView {
         outputView.printNewLine();
         return new Name(name);
     }
+
+    public Name readDeleteStation() {
+        outputView.printDeleteSectionStation();
+        String name = scanner.nextLine();
+        outputView.printNewLine();
+        return new Name(name);
+    }
 }
