@@ -8,51 +8,32 @@ import java.util.Scanner;
 public class SectionInputView {
 
     private final Scanner scanner;
-    private final SectionOutputView outputView = new SectionOutputView();
 
     public SectionInputView(Scanner scanner) {
         this.scanner = scanner;
     }
 
     public SectionOption readOption() {
-        outputView.printOptions();
-        SectionOption option = SectionOption.getOption(scanner.nextLine());
-        outputView.printNewLine();
-        return option;
+        return SectionOption.getOption(scanner.nextLine());
     }
 
     public Name readLineName() {
-        outputView.printReadLineName();
-        String name = scanner.nextLine();
-        outputView.printNewLine();
-        return new Name(name);
+        return new Name(scanner.nextLine());
     }
 
     public Name readStationName() {
-        outputView.printReadStationName();
-        String name = scanner.nextLine();
-        outputView.printNewLine();
-        return new Name(name);
+        return new Name(scanner.nextLine());
     }
 
     public int readIndex() {
-        outputView.printReadIndex();
-        int index = scanner.nextInt();
-        outputView.printNewLine();
-        return index;
+        return scanner.nextInt();
     }
 
     public Name readDeleteLine() {
-        outputView.printDeleteSectionLine();
-        String name = scanner.nextLine();
-        outputView.printNewLine();
-        return new Name(name);
+        return new Name(scanner.nextLine());
     }
 
     public Name readDeleteStation() {
-        outputView.printDeleteSectionStation();
-        String name = scanner.nextLine();
-        outputView.printNewLine();
-        return new Name(name);
+        return new Name(scanner.nextLine());
     }
 }

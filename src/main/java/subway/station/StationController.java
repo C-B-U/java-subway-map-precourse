@@ -1,24 +1,25 @@
 package subway.station;
 
-import subway.view.InputView;
-import subway.view.OutputView;
+import subway.view.station.StationInputView;
+import subway.view.station.StationOutputView;
+
+import java.util.Scanner;
 
 public class StationController {
 
-    private final OutputView outputView;
-    private final InputView inputView;
+    private final StationOutputView outputView;
+    private final StationInputView inputView;
     private final StationService stationService;
 
-    public StationController(OutputView outputView, InputView inputView) {
-        this.outputView = outputView;
-        this.inputView = inputView;
+    public StationController(Scanner scanner) {
+        this.outputView = new StationOutputView();
+        this.inputView = new StationInputView(scanner);
         this.stationService = new StationService();
     }
 
     public void start() {
         while (true) {
-            outputView.printStationOption();
-            StationOption option = inputView.readStationOption();
+            StationOption option = readStationOption();
             if (option.isBack()) {
                 break;
             }
@@ -26,21 +27,44 @@ public class StationController {
             deleteStation(option);
             printStation(option);
         }
+    }
 
+    private StationOption readStationOption() {
+        outputView.printStationOption();
+        outputView.printOptions();
+        StationOption option = inputView.readStationOption();
+        outputView.printNewLine();
+        return option;
     }
 
     private void createStation(StationOption option) {
         if (option.isCreate()) {
-            stationService.create(inputView.readStationName());
+            stationService.create(readStationName());
             outputView.printCreated();
+            outputView.printNewLine();
         }
+    }
+
+    private Name readStationName() {
+        outputView.printStationCreation();
+        Name name = inputView.readStationName();
+        outputView.printNewLine();
+        return name;
     }
 
     private void deleteStation(StationOption option) {
         if (option.isDelete()) {
-            stationService.delete(inputView.readDeleteStationName());
+            stationService.delete(readDeleteStationName());
             outputView.printDeleted();
+            outputView.printNewLine();
         }
+    }
+
+    private Name readDeleteStationName() {
+        outputView.printDeleteStation();
+        Name name = inputView.readDeleteStationName();
+        outputView.printNewLine();
+        return name;
     }
 
     private void printStation(StationOption option) {

@@ -2,8 +2,8 @@ package subway.line;
 
 import subway.station.Name;
 import subway.station.Station;
-import subway.view.LineView.LineInputView;
-import subway.view.LineView.LineOutputView;
+import subway.view.line.LineInputView;
+import subway.view.line.LineOutputView;
 
 import java.util.Scanner;
 
@@ -21,8 +21,7 @@ public class LineController {
 
     public void start() {
         while (true) {
-            outputView.printLineOption();
-            LineOption option = inputView.readOption();
+            LineOption option = readOption();
             if (option.isBack()) {
                 break;
             }
@@ -32,21 +31,59 @@ public class LineController {
         }
     }
 
+    private LineOption readOption() {
+        outputView.printLineOption();
+        outputView.printOptions();
+        LineOption option = inputView.readOption();
+        outputView.printNewLine();
+        return option;
+    }
+
     public void createLine(LineOption option) {
         if (option.isCreate()) {
-            Name name = inputView.readLineName();
-            Station upBoundStation = inputView.readUpBoundStation();
-            Station descendingStation = inputView.readDescendingStation();
+            Name name = readName();
+            Station upBoundStation = readUpBoundStation();
+            Station descendingStation = readDescendingStation();
             lineService.create(name, upBoundStation, descendingStation);
             outputView.printCreateLine();
+            outputView.printNewLine();
         }
+    }
+
+    private Name readName() {
+        outputView.printReadLineName();
+        Name name = inputView.readLineName();
+        outputView.printNewLine();
+        return name;
+    }
+
+    private Station readUpBoundStation() {
+        outputView.printUpBoundStation();
+        Station station = inputView.readUpBoundStation();
+        outputView.printNewLine();
+        return station;
+    }
+
+    private Station readDescendingStation() {
+        outputView.printDescendingStation();
+        Station station = inputView.readDescendingStation();
+        outputView.printNewLine();
+        return station;
     }
 
     public void deleteLine(LineOption option) {
         if (option.isDelete()) {
-            lineService.delete(inputView.readDeleteStation());
+            lineService.delete(readDeleteStation());
             outputView.printDeleteLine();
+            outputView.printNewLine();
         }
+    }
+
+    private Name readDeleteStation() {
+        outputView.printReadDeleteLine();
+        Name name = inputView.readDeleteStation();
+        outputView.printNewLine();
+        return name;
     }
 
     public void printLines(LineOption option) {

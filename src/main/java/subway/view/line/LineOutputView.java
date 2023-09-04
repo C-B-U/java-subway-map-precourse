@@ -1,4 +1,4 @@
-package subway.view.LineView;
+package subway.view.line;
 
 import subway.constant.InformationMessage;
 import subway.constant.OutputMessage;

@@ -21,7 +21,7 @@ public class SubwayController {
     public SubwayController(Scanner scanner) {
         this.outputView = new OutputView();
         this.inputView = new InputView(scanner);
-        this.stationController = new StationController(outputView, inputView);
+        this.stationController = new StationController(scanner);
         this.lineController = new LineController(scanner);
         this.sectionController = new SectionController(scanner);
         this.subwayMapController = new SubwayMapController();
@@ -30,13 +30,20 @@ public class SubwayController {
     public void start() {
         Initialization.init();
         while (true) {
-            outputView.printMainOptions();
-            MainOption option = inputView.readOption();
+            MainOption option = readOption();
             if (option.isQuit()) {
                 break;
             }
             link(option);
         }
+    }
+
+    private MainOption readOption() {
+        outputView.printMainOptions();
+        outputView.printOptions();
+        MainOption option = inputView.readOption();
+        outputView.printNewLine();
+        return option;
     }
 
     private void link(MainOption option) {

@@ -20,8 +20,7 @@ public class SectionController {
 
     public void start() {
         while (true) {
-            outputView.printSectionOption();
-            SectionOption option = inputView.readOption();
+            SectionOption option = readOption();
             if (option.isBack()) {
                 break;
             }
@@ -30,22 +29,63 @@ public class SectionController {
         }
     }
 
+    private SectionOption readOption() {
+        outputView.printSectionOption();
+        outputView.printOptions();
+        SectionOption option = inputView.readOption();
+        outputView.printNewLine();
+        return option;
+    }
+
     private void createSection(SectionOption option) {
         if (option.isCreate()) {
-            Name lineName = inputView.readLineName();
-            Name stationName = inputView.readStationName();
-            int index = inputView.readIndex();
+            Name lineName = readLineName();
+            Name stationName = readStationName();
+            int index = readIndex();
             sectionService.create(lineName, stationName, index);
             outputView.printCreateSection();
         }
     }
 
+    private Name readLineName() {
+        outputView.printReadLineName();
+        Name name = inputView.readLineName();
+        outputView.printNewLine();
+        return name;
+    }
+
+    private Name readStationName() {
+        outputView.printReadStationName();
+        Name name = inputView.readStationName();
+        outputView.printNewLine();
+        return name;
+    }
+
+    private int readIndex() {
+        outputView.printReadIndex();
+        int index = inputView.readIndex();
+        outputView.printNewLine();
+        return index;
+    }
+
     private void deleteSection(SectionOption option) {
         if (option.isDelete()) {
-            Name lineName = inputView.readDeleteLine();
-            Name stationName = inputView.readDeleteStation();
-            sectionService.delete(lineName, stationName);
+            sectionService.delete(readDeleteLine(), readDeleteStation());
             outputView.printDeleteSection();
         }
+    }
+
+    public Name readDeleteLine() {
+        outputView.printDeleteSectionLine();
+        Name name = inputView.readDeleteLine();
+        outputView.printNewLine();
+        return name;
+    }
+
+    public Name readDeleteStation() {
+        outputView.printDeleteSectionStation();
+        Name name = inputView.readDeleteStation();
+        outputView.printNewLine();
+        return name;
     }
 }
