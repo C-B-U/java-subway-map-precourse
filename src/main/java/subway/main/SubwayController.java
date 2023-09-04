@@ -26,9 +26,14 @@ public class SubwayController {
 
     public void start() {
         Initialization.init();
-        outputView.printMainOptions();
-        MainOption option = inputView.readOption();
-        link(option);
+        while (true) {
+            outputView.printMainOptions();
+            MainOption option = inputView.readOption();
+            if (option.isQuit()) {
+                break;
+            }
+            link(option);
+        }
     }
 
     private void link(MainOption option) {

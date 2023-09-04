@@ -16,11 +16,17 @@ public class StationController {
     }
 
     public void start() {
-        outputView.printStationOption();
-        StationOption option = inputView.readStationOption();
-        createStation(option);
-        deleteStation(option);
-        printStation(option);
+        while (true) {
+            outputView.printStationOption();
+            StationOption option = inputView.readStationOption();
+            if (option.isBack()) {
+                break;
+            }
+            createStation(option);
+            deleteStation(option);
+            printStation(option);
+        }
+
     }
 
     private void createStation(StationOption option) {

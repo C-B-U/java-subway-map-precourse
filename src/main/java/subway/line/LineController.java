@@ -20,11 +20,16 @@ public class LineController {
     }
 
     public void start() {
-        outputView.printLineOption();
-        LineOption option = inputView.readOption();
-        createLine(option);
-        deleteLine(option);
-        printLines(option);
+        while (true) {
+            outputView.printLineOption();
+            LineOption option = inputView.readOption();
+            if (option.isBack()) {
+                break;
+            }
+            createLine(option);
+            deleteLine(option);
+            printLines(option);
+        }
     }
 
     public void createLine(LineOption option) {

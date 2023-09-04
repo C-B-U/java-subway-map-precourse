@@ -36,7 +36,11 @@ public enum StationOption {
     }
 
     public boolean isRead() {
-        return  this == READ;
+        return this == READ;
+    }
+
+    public boolean isBack() {
+        return this == BACK;
     }
 
     public String getOption() {

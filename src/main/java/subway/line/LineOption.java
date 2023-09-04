@@ -38,6 +38,10 @@ public enum LineOption {
         return  this == READ;
     }
 
+    public boolean isBack() {
+        return this == BACK;
+    }
+
     public String getOption() {
         return option;
     }

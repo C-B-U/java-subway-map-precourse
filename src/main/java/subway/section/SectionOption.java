@@ -34,6 +34,10 @@ public enum SectionOption {
         return this == DELETE;
     }
 
+    public boolean isBack() {
+        return this == BACK;
+    }
+
     public String getOption() {
         return option;
     }

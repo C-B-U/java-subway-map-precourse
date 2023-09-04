@@ -19,10 +19,15 @@ public class SectionController {
     }
 
     public void start() {
-        outputView.printSectionOption();
-        SectionOption option = inputView.readOption();
-        createSection(option);
-        deleteSection(option);
+        while (true) {
+            outputView.printSectionOption();
+            SectionOption option = inputView.readOption();
+            if (option.isBack()) {
+                break;
+            }
+            createSection(option);
+            deleteSection(option);
+        }
     }
 
     private void createSection(SectionOption option) {

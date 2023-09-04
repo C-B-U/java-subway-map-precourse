@@ -39,6 +39,10 @@ public enum MainOption {
         return this == MainOption.SECTION_MANAGEMENT;
     }
 
+    public boolean isQuit() {
+        return this == MainOption.QUIT;
+    }
+
     public String getOption() {
         return option;
     }
