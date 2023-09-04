@@ -22,6 +22,10 @@ public class Line {
         stopStations.addStation(station, index);
     }
 
+    public void deleteStopStation(Station station) {
+        stopStations.deleteStation(station);
+    }
+
     @Override
     public String toString() {
         return String.format(InformationMessage.READ_ELEMENT.toString(), name);

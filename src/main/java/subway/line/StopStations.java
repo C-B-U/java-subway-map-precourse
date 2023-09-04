@@ -31,7 +31,7 @@ public class StopStations {
         element.add(index - START_INDEX, station);
     }
 
-    public void validateStation(Station station , int index) {
+    private void validateStation(Station station , int index) {
         validateExistingStation(station);
         validateRange(index);
     }
@@ -46,5 +46,9 @@ public class StopStations {
         if (!(1 <= index && index <= element.size())) {
             throw new IllegalArgumentException(ExceptionMessage.OUT_OF_RANGE.toString());
         }
+    }
+
+    public void deleteStation(Station station) {
+        element.remove(station);
     }
 }

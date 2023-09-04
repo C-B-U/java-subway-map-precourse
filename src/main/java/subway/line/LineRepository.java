@@ -41,6 +41,11 @@ public class LineRepository {
         line.addStopStation(station, index);
     }
 
+    public static void deleteStopStation(Name lineName, Station station) {
+        Line line = findLineByName(lineName);
+        line.deleteStopStation(station);
+    }
+
     private static Line findLineByName(Name name) {
         return lines.stream()
                 .filter(line -> line.isSame(name))
