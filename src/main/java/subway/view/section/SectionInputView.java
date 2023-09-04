@@ -2,8 +2,6 @@ package subway.view.section;
 
 import subway.section.SectionOption;
 import subway.station.Name;
-import subway.station.Station;
-import subway.station.StationRepository;
 
 import java.util.Scanner;
 
@@ -30,11 +28,11 @@ public class SectionInputView {
         return new Name(name);
     }
 
-    public Station readStationName() {
+    public Name readStationName() {
         outputView.printReadStationName();
-        Name name = new Name(scanner.nextLine());
+        String name = scanner.nextLine();
         outputView.printNewLine();
-        return StationRepository.findByName(name);
+        return new Name(name);
     }
 
     public int readIndex() {
