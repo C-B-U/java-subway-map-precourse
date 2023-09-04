@@ -32,13 +32,13 @@ public class StopStations {
     }
 
     private void validateStation(Station station , int index) {
-        validateExistingStation(station);
+        validateDuplicateStation(station);
         validateRange(index);
     }
 
-    private void validateExistingStation(Station station) {
+    private void validateDuplicateStation(Station station) {
         if (element.contains(station)) {
-            throw new IllegalArgumentException(ExceptionMessage.EXISTING_SECTION.toString());
+            throw new IllegalArgumentException(ExceptionMessage.DUPLICATE_SECTION_STATION.toString());
         }
     }
 
@@ -49,6 +49,13 @@ public class StopStations {
     }
 
     public void deleteStation(Station station) {
+        validateExistingStation(station);
         element.remove(station);
+    }
+
+    private void validateExistingStation(Station station) {
+        if (!element.contains(station)) {
+            throw new IllegalArgumentException(ExceptionMessage.NOT_EXISTING_STATION.toString());
+        }
     }
 }
