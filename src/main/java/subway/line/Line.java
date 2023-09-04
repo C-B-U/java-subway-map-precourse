@@ -2,6 +2,7 @@ package subway.line;
 
 import subway.constant.InformationMessage;
 import subway.station.Name;
+import subway.station.Station;
 
 public class Line {
 
@@ -15,6 +16,10 @@ public class Line {
 
     public boolean isSame(Name name) {
         return name.equals(this.name);
+    }
+
+    public void addStopStation(Station station, int index) {
+        stopStations.addStation(station, index);
     }
 
     @Override

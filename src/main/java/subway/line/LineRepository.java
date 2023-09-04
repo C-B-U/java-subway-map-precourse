@@ -2,6 +2,7 @@ package subway.line;
 
 import subway.constant.ExceptionMessage;
 import subway.station.Name;
+import subway.station.Station;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,6 +34,11 @@ public class LineRepository {
     public static void deleteLineByName(Name name) {
         Line line = findLineByName(name);
         lines.remove(line);
+    }
+
+    public static void addStopStation(Name lineName, Station station, int index) {
+        Line line = findLineByName(lineName);
+        line.addStopStation(station, index);
     }
 
     private static Line findLineByName(Name name) {
