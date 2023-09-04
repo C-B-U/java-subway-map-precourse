@@ -41,4 +41,11 @@ public class SectionInputView {
         outputView.printNewLine();
         return index;
     }
+
+    public Name readDeleteLine() {
+        outputView.printDeleteSectionLine();
+        String name = scanner.nextLine();
+        outputView.printNewLine();
+        return new Name(name);
+    }
 }

@@ -44,6 +44,10 @@ public class SectionOutputView {
         System.out.println(InformationMessage.CREATE_SECTION);
     }
 
+    public void printDeleteSectionLine() {
+        System.out.println(OutputMessage.DELETE_SECTION_LINE);
+    }
+
     public void printNewLine() {
         System.out.println();
     }
