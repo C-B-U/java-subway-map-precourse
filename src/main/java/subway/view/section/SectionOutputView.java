@@ -52,6 +52,10 @@ public class SectionOutputView {
         System.out.println(OutputMessage.DELETE_LINE);
     }
 
+    public void printDeleteSection() {
+        System.out.println(InformationMessage.DELETE_SECTION);
+    }
+
     public void printNewLine() {
         System.out.println();
     }
