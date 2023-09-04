@@ -3,6 +3,7 @@ package subway.main;
 import subway.line.LineController;
 import subway.section.SectionController;
 import subway.station.StationController;
+import subway.subwaymap.SubwayMapController;
 import subway.view.InputView;
 import subway.view.OutputView;
 
@@ -15,6 +16,7 @@ public class SubwayController {
     private final StationController stationController;
     private final LineController lineController;
     private final SectionController sectionController;
+    private final SubwayMapController subwayMapController;
 
     public SubwayController(Scanner scanner) {
         this.outputView = new OutputView();
@@ -22,6 +24,7 @@ public class SubwayController {
         this.stationController = new StationController(outputView, inputView);
         this.lineController = new LineController(scanner);
         this.sectionController = new SectionController(scanner);
+        this.subwayMapController = new SubwayMapController();
     }
 
     public void start() {
@@ -40,6 +43,7 @@ public class SubwayController {
         linkToStationManagement(option);
         linkToLineManagement(option);
         linkToSectionManagement(option);
+        linkToSubwayMap(option);
     }
 
     private void linkToStationManagement(MainOption option) {
@@ -57,6 +61,12 @@ public class SubwayController {
     private void linkToSectionManagement(MainOption option) {
         if (option.isSectionManagement()) {
             sectionController.start();
+        }
+    }
+
+    private void linkToSubwayMap(MainOption option) {
+        if (option.isSubwayMap()) {
+            subwayMapController.start();
         }
     }
 }

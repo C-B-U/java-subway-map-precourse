@@ -28,15 +28,19 @@ public enum MainOption {
     }
 
     public boolean isStationManagement() {
-        return this == MainOption.STATION_MANAGEMENT;
+        return this == STATION_MANAGEMENT;
     }
 
     public boolean isLineManagement() {
-        return this == MainOption.LINE_MANAGEMENT;
+        return this == LINE_MANAGEMENT;
     }
 
     public boolean isSectionManagement() {
-        return this == MainOption.SECTION_MANAGEMENT;
+        return this == SECTION_MANAGEMENT;
+    }
+
+    public boolean isSubwayMap() {
+        return this == SUBWAY_MAP;
     }
 
     public boolean isQuit() {
