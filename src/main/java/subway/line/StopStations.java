@@ -27,6 +27,17 @@ public class StopStations {
     }
 
     public void addStation(Station station, int index) {
+        validateStation(station);
         element.add(index - START_INDEX, station);
+    }
+
+    public void validateStation(Station station) {
+        validateExistingStation(station);
+    }
+
+    private void validateExistingStation(Station station) {
+        if (element.contains(station)) {
+            throw new IllegalArgumentException(ExceptionMessage.EXISTING_SECTION.toString());
+        }
     }
 }

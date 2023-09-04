@@ -8,7 +8,8 @@ public enum ExceptionMessage {
     NOT_EXISTENT_STATION("존재하지 않는 역입니다."),
     DUPLICATE_LAST_STATION("상행 종점 역과 하행 종점역인 다른 역으로 입력되어야 합니다."),
     DUPLICATE_LINE("이미 존재하는 노선입니다."),
-    NOT_EXISTENT_LINE("존재하지 않는 노선입니다.");
+    NOT_EXISTENT_LINE("존재하지 않는 노선입니다."),
+    EXISTING_SECTION("해당 노선에 이미 존재하는 역입니다.");
 
     private final String message;
 
