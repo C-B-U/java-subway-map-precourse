@@ -58,4 +58,11 @@ public class StopStations {
             throw new IllegalArgumentException(ExceptionMessage.NOT_EXISTING_STATION.toString());
         }
     }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        element.forEach(stringBuilder::append);
+        return stringBuilder.toString();
+    }
 }

@@ -19,7 +19,8 @@ public enum OutputMessage {
     SECTION_STATION("역이름을 입력하세요."),
     SECTION_INDEX("순서를 입력하세요."),
     DELETE_SECTION_LINE("삭제할 구간의 노선을 입력하세요."),
-    DELETE_SECTION_STATION("삭제할 구간의 역을 입력하세요.");
+    DELETE_SECTION_STATION("삭제할 구간의 역을 입력하세요."),
+    SUBWAY_MAP("지하철 노선도");
 
     private static final String PREFIX = "## ";
     private final String message;

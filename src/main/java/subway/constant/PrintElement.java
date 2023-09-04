@@ -3,7 +3,8 @@ package subway.constant;
 public enum PrintElement {
 
     COMMA(". "),
-    NEW_LINE("\n");
+    NEW_LINE("\n"),
+    DOTTED_LINE("---");
 
     private final String element;
 

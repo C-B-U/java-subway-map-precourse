@@ -1,6 +1,7 @@
 package subway.line;
 
 import subway.constant.InformationMessage;
+import subway.constant.PrintElement;
 import subway.station.Name;
 import subway.station.Station;
 
@@ -29,5 +30,12 @@ public class Line {
     @Override
     public String toString() {
         return String.format(InformationMessage.READ_ELEMENT.toString(), name);
+    }
+
+    public String getSubwayMap() {
+        return String.valueOf(this) +
+                PrintElement.DOTTED_LINE +
+                PrintElement.NEW_LINE +
+                stopStations;
     }
 }
