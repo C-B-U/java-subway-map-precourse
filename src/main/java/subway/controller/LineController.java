@@ -2,7 +2,6 @@ package subway.controller;
 
 import subway.domain.InformationMessage;
 import subway.domain.features.LineFeatures;
-import subway.domain.features.StationFeatures;
 import subway.service.LineService;
 import subway.view.InputView;
 import subway.view.OutputView;
@@ -21,32 +20,40 @@ public class LineController {
     }
 
     public void execute(LineFeatures lineFeatures) {
-        executeLineRegistration(lineFeatures);
-        executeLineDeletion(lineFeatures);
+        executeRegistration(lineFeatures);
+        executeDeletion(lineFeatures);
         executeLineView(lineFeatures);
     }
 
-    private void executeLineRegistration(LineFeatures lineFeatures) {
+    private void executeRegistration(LineFeatures lineFeatures) {
         if(lineFeatures == LineFeatures.REGISTER) {
-            outputView.printWantedLineForRegister();
-            try {
-                lineService.registerLine(inputView.inputLineName());
-                outputView.printInformation(InformationMessage.REGISTER_LINE);
-            } catch (IllegalArgumentException e) {
-                outputView.printException(e);
-            }
+            executeLineRegistration();
         }
     }
 
-    private void executeLineDeletion(LineFeatures lineFeatures) {
+    private void executeLineRegistration() {
+        outputView.printWantedLineForRegister();
+        try {
+            lineService.registerLine(inputView.inputLineName());
+            outputView.printInformation(InformationMessage.REGISTER_LINE);
+        } catch (IllegalArgumentException e) {
+            outputView.printException(e);
+        }
+    }
+
+    private void executeDeletion(LineFeatures lineFeatures) {
         if(lineFeatures == LineFeatures.DELETE) {
-            outputView.printWantedLineForDelete();
-            try {
-                lineService.deleteLine(inputView.inputLineName());
-                outputView.printInformation(InformationMessage.DELETE_STATION);
-            } catch (IllegalArgumentException e) {
-                outputView.printException(e);
-            }
+            executeLineDeletion();
+        }
+    }
+
+    private void executeLineDeletion() {
+        outputView.printWantedLineForDelete();
+        try {
+            lineService.deleteLine(inputView.inputLineName());
+            outputView.printInformation(InformationMessage.DELETE_STATION);
+        } catch (IllegalArgumentException e) {
+            outputView.printException(e);
         }
     }
 
