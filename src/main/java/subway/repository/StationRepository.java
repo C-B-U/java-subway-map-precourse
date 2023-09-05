@@ -12,6 +12,8 @@ import java.util.Objects;
 public class StationRepository {
     private static final List<Station> stations = new ArrayList<>();
 
+    private StationRepository() {}
+
     static {
         addStation(new Station("교대역"));
         addStation(new Station("강남역"));

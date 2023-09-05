@@ -11,10 +11,27 @@ import java.util.Objects;
 public class LineRepository {
     private static final List<Line> lines = new ArrayList<>();
 
+    private LineRepository () {}
+
     static {
-        addLine(new Line("2호선"));
-        addLine(new Line("3호선"));
-        addLine(new Line("신분당선"));
+        Line lineTwo = new Line("2호선");
+        lineTwo.addStation(StationRepository.getStation("교대역"));
+        lineTwo.addStation(StationRepository.getStation("강남역"));
+        lineTwo.addStation(StationRepository.getStation("역삼역"));
+        addLine(lineTwo);
+
+        Line lineThree = new Line("3호선");
+        lineThree.addStation(StationRepository.getStation("교대역"));
+        lineThree.addStation(StationRepository.getStation("남부터미널역"));
+        lineThree.addStation(StationRepository.getStation("양재역"));
+        lineThree.addStation(StationRepository.getStation("매봉역"));
+        addLine(lineThree);
+
+        Line lineSinBoonDang = new Line("신분당선");
+        lineSinBoonDang.addStation(StationRepository.getStation("강남역"));
+        lineSinBoonDang.addStation(StationRepository.getStation("양재역"));
+        lineSinBoonDang.addStation(StationRepository.getStation("양재시민의숲역"));
+        addLine(lineSinBoonDang);
     }
 
     public static List<Line> lines() {
