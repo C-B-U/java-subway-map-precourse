@@ -16,7 +16,15 @@ public class Line {
     }
 
     public void addStation(Station station) {
+        validateIsExist(station);
         stationList.add(station);
+    }
+
+    private void validateIsExist(Station station) {
+        System.out.println(stationList.size());
+        if (stationList.stream().anyMatch(value -> value.getName().equals(station.getName()))) {
+            throw new IllegalArgumentException(ErrorMessage.ALREADY_EXIST_STATION.toString());
+        }
     }
 
     private void validateLinenName(String name) {

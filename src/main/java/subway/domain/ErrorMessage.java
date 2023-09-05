@@ -7,7 +7,9 @@ public enum ErrorMessage {
     WRONG_FEATURE_NUMBER("선택할 수 없는 기능입니다. 다시 입력해 주세요."),
     WRONG_NAME_COMPONENT("올바르지 않은 이름입니다. 다시 입력해 주세요."),
     NOT_EXIST_STATION("존재하지 않는 역입니다."),
-    NOT_EXIST_LINE("존재하지 않는 노선입니다.");
+    ALREADY_EXIST_STATION("이미 노선에 포함된 역입니다."),
+    NOT_EXIST_LINE("존재하지 않는 노선입니다."),
+    ALREADY_EXIST_LINE("이미 존재하는 노선입니다.");
 
     private static final String PREFIX = "[ERROR] ";
     private final String message;

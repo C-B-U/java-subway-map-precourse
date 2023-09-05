@@ -75,7 +75,7 @@ public class InputView {
             return StationRepository.getStation(name);
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
-            return inputStationName();
+            return inputStationOfLineName();
         }
     }
 }

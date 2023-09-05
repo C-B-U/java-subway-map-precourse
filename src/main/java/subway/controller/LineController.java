@@ -3,6 +3,7 @@ package subway.controller;
 import subway.domain.InformationMessage;
 import subway.domain.Line;
 import subway.domain.ProcessMessage;
+import subway.domain.Station;
 import subway.domain.features.LineFeatures;
 import subway.service.LineService;
 import subway.view.InputView;
@@ -39,17 +40,31 @@ public class LineController {
             Line line = inputView.inputLineName();
             lineService.registerLine(line);
             executeStationOfLineRegistration(line);
-            outputView.printInformation(InformationMessage.REGISTER_LINE);
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
         }
     }
 
     private void executeStationOfLineRegistration(Line line) {
+        try {
+            executeFirstStationOfLineRegistration(line);
+            executeLastStationOfLineRegistration(line);
+            outputView.printInformation(InformationMessage.REGISTER_LINE);
+        } catch (IllegalArgumentException e) {
+            outputView.printException(e);
+        }
+    }
+
+    private void executeFirstStationOfLineRegistration(Line line) {
         outputView.printProcess(ProcessMessage.REGISTER_FIRST_STATION_OF_LINE);
-        lineService.addStation(line, inputView.inputStationOfLineName());
+        Station firstStation = inputView.inputStationOfLineName();
+        lineService.addStation(line, firstStation);
+    }
+
+    private void executeLastStationOfLineRegistration(Line line) {
         outputView.printProcess(ProcessMessage.REGISTER_LAST_STATION_OF_LINE);
-        lineService.addStation(line, inputView.inputStationOfLineName());
+        Station lastStation = inputView.inputStationOfLineName();
+        lineService.addStation(line, lastStation);
     }
 
     private void executeDeletion(LineFeatures lineFeatures) {
