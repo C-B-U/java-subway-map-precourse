@@ -38,21 +38,17 @@ public class LineController {
         outputView.printProcess(ProcessMessage.INPUT_REGISTER_LINE);
         try {
             Line line = inputView.inputLineName();
-            lineService.registerLine(line);
             executeStationOfLineRegistration(line);
+            lineService.registerLine(line);
+            outputView.printInformation(InformationMessage.REGISTER_LINE);
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
         }
     }
 
     private void executeStationOfLineRegistration(Line line) {
-        try {
-            executeFirstStationOfLineRegistration(line);
-            executeLastStationOfLineRegistration(line);
-            outputView.printInformation(InformationMessage.REGISTER_LINE);
-        } catch (IllegalArgumentException e) {
-            outputView.printException(e);
-        }
+        executeFirstStationOfLineRegistration(line);
+        executeLastStationOfLineRegistration(line);
     }
 
     private void executeFirstStationOfLineRegistration(Line line) {

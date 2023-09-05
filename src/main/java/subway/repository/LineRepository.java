@@ -22,23 +22,23 @@ public class LineRepository {
     }
 
     public static void addLine(Line line) {
-        validateNotExistLine(line);
+        validateNotExistLine(line.getName());
         lines.add(line);
     }
 
     public static void deleteLine(Line line) {
-        validateExistLine(line);
+        validateExistLine(line.getName());
         lines.removeIf(value -> Objects.equals(value.getName(), line.getName()));
     }
 
-    private static void validateNotExistLine(Line line) {
-        if (lines.stream().anyMatch(value -> value.getName().equals(line.getName()))) {
+    public static void validateNotExistLine(String name) {
+        if (lines.stream().anyMatch(value -> value.getName().equals(name))) {
             throw new IllegalArgumentException(ErrorMessage.ALREADY_EXIST_LINE.toString());
         }
     }
 
-    private static void validateExistLine(Line line) {
-        if (lines.stream().noneMatch(value -> value.getName().equals(line.getName()))) {
+    private static void validateExistLine(String name) {
+        if (lines.stream().noneMatch(value -> value.getName().equals(name))) {
             throw new IllegalArgumentException(ErrorMessage.NOT_EXIST_LINE.toString());
         }
     }

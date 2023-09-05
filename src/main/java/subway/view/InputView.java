@@ -5,6 +5,7 @@ import subway.domain.Station;
 import subway.domain.features.LineFeatures;
 import subway.domain.features.MainFeatures;
 import subway.domain.features.StationFeatures;
+import subway.repository.LineRepository;
 import subway.repository.StationRepository;
 
 import java.util.Scanner;
@@ -60,6 +61,7 @@ public class InputView {
         final Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
         try {
+            LineRepository.validateNotExistLine(name);
             return new Line(name);
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
