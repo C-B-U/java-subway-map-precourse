@@ -1,6 +1,7 @@
 package subway.controller;
 
 import subway.domain.InformationMessage;
+import subway.domain.Line;
 import subway.domain.ProcessMessage;
 import subway.domain.features.LineFeatures;
 import subway.service.LineService;
@@ -35,16 +36,20 @@ public class LineController {
     private void executeLineRegistration() {
         outputView.printProcess(ProcessMessage.INPUT_REGISTER_LINE);
         try {
-            lineService.registerLine(inputView.inputLineName());
+            Line line = inputView.inputLineName();
+            lineService.registerLine(line);
+            executeStationOfLineRegistration(line);
             outputView.printInformation(InformationMessage.REGISTER_LINE);
-            executeStationOfLineRegistration();
         } catch (IllegalArgumentException e) {
             outputView.printException(e);
         }
     }
 
-    private void executeStationOfLineRegistration() {
+    private void executeStationOfLineRegistration(Line line) {
         outputView.printProcess(ProcessMessage.REGISTER_FIRST_STATION_OF_LINE);
+        lineService.addStation(line, inputView.inputStationOfLineName());
+        outputView.printProcess(ProcessMessage.REGISTER_LAST_STATION_OF_LINE);
+        lineService.addStation(line, inputView.inputStationOfLineName());
     }
 
     private void executeDeletion(LineFeatures lineFeatures) {

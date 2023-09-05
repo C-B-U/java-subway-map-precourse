@@ -1,14 +1,22 @@
 package subway.domain;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Line {
     private static final String LINE_UNIT = "선";
     private static final int MINIMUM_LENGTH = 2;
 
     private final String name;
+    private final List<Station> stationList = new LinkedList<>();
 
     public Line(String name) {
         validateLinenName(name);
         this.name = name;
+    }
+
+    public void addStation(Station station) {
+        stationList.add(station);
     }
 
     private void validateLinenName(String name) {
@@ -30,6 +38,10 @@ public class Line {
 
     public String getName() {
         return name;
+    }
+
+    public List<Station> getStationList() {
+        return new LinkedList<>(stationList);
     }
 
     // 추가 기능 구현

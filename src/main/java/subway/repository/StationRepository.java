@@ -38,13 +38,20 @@ public class StationRepository {
     }
 
     public static void deleteStation(Station station) {
-        validateExistStation(station);
+        validateExistStation(station.getName());
         stations.removeIf(value -> Objects.equals(value.getName(), station.getName()));
     }
 
-    private static void validateExistStation(Station station) {
-        if (stations.stream().noneMatch(value -> value.getName().equals(station.getName()))) {
+    public static void validateExistStation(String name) {
+        if (stations.stream().noneMatch(value -> value.getName().equals(name))) {
             throw new IllegalArgumentException(ErrorMessage.NOT_EXIST_STATION.toString());
         }
+    }
+
+    public static Station getStation(String name) {
+        return stations.stream()
+                .filter(station -> station.getName().equals(name))
+                .findAny()
+                .orElseThrow();
     }
 }

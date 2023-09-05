@@ -1,8 +1,8 @@
 package subway.service;
 
 import subway.domain.Line;
+import subway.domain.Station;
 import subway.repository.LineRepository;
-import subway.repository.StationRepository;
 import subway.view.OutputView;
 
 public class LineService {
@@ -10,6 +10,10 @@ public class LineService {
 
     public void registerLine(Line line) {
         LineRepository.addLine(line);
+    }
+
+    public void addStation(Line line, Station station) {
+        line.addStation(station);
     }
 
     public void deleteLine(Line line) {
