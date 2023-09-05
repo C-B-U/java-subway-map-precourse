@@ -52,7 +52,7 @@ public class LineRepository {
         line.deleteStopStation(station);
     }
 
-    private static Line findLineByName(Name name) {
+    public static Line findLineByName(Name name) {
         return lines.stream()
                 .filter(line -> line.isSame(name))
                 .findAny()
