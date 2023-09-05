@@ -27,6 +27,10 @@ public class Line {
         stopStations.deleteStation(station);
     }
 
+    public boolean isContainStation(Station station) {
+        return stopStations.contain(station);
+    }
+
     @Override
     public String toString() {
         return String.format(InformationMessage.READ_ELEMENT.toString(), name);

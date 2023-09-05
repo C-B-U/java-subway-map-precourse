@@ -37,7 +37,7 @@ public class LineOptionTest {
 
         LineOption option = LineOption.getOption(input);
 
-        assertThat(option).isEqualTo(LineOption.CREATE);
+        assertThat(option.isCreate()).isTrue();
     }
 
     @DisplayName("옵션이 DELETE 상태이면 true를 반환한다.")
@@ -47,7 +47,7 @@ public class LineOptionTest {
 
         LineOption option = LineOption.getOption(input);
 
-        assertThat(option).isEqualTo(LineOption.DELETE);
+        assertThat(option.isDelete()).isTrue();
     }
 
     @DisplayName("옵션이 Read 상태이면 true를 반환한다.")
@@ -57,7 +57,7 @@ public class LineOptionTest {
 
         LineOption option = LineOption.getOption(input);
 
-        assertThat(option).isEqualTo(LineOption.READ);
+        assertThat(option.isRead()).isTrue();
     }
 
     @DisplayName("옵션이 Back 상태이면 true를 반환한다.")
@@ -67,6 +67,6 @@ public class LineOptionTest {
 
         LineOption option = LineOption.getOption(input);
 
-        assertThat(option).isEqualTo(LineOption.BACK);
+        assertThat(option.isBack()).isTrue();
     }
 }
