@@ -26,7 +26,7 @@ public class SectionInputView {
     }
 
     public int readIndex() {
-        return scanner.nextInt();
+        return Integer.parseInt(scanner.nextLine());
     }
 
     public Name readDeleteLine() {

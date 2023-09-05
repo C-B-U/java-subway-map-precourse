@@ -48,6 +48,7 @@ public class SectionController {
             int index = readIndex();
             sectionService.create(lineName, stationName, index);
             outputView.printCreateSection();
+            outputView.printNewLine();
         }
     }
 
@@ -76,6 +77,7 @@ public class SectionController {
         if (option.isDelete()) {
             sectionService.delete(readDeleteLine(), readDeleteStation());
             outputView.printDeleteSection();
+            outputView.printNewLine();
         }
     }
 
