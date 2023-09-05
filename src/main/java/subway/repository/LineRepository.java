@@ -22,16 +22,19 @@ public class LineRepository {
     }
 
     public static void addLine(Line line) {
+        validateNotExistLine(line);
         lines.add(line);
-    }
-
-    public static boolean deleteLineByName(String name) {
-        return lines.removeIf(line -> Objects.equals(line.getName(), name));
     }
 
     public static void deleteLine(Line line) {
         validateExistLine(line);
         lines.removeIf(value -> Objects.equals(value.getName(), line.getName()));
+    }
+
+    private static void validateNotExistLine(Line line) {
+        if (lines.stream().anyMatch(value -> value.getName().equals(line.getName()))) {
+            throw new IllegalArgumentException(ErrorMessage.ALREADY_EXIST_LINE.toString());
+        }
     }
 
     private static void validateExistLine(Line line) {
