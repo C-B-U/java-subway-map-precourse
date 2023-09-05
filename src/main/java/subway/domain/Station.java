@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.domain.message.ErrorMessage;
+
 public class Station {
     private static final String STATION_UNIT = "역";
     private static final int MINIMUM_LENGTH = 2;

@@ -1,6 +1,6 @@
 package subway.repository;
 
-import subway.domain.ErrorMessage;
+import subway.domain.message.ErrorMessage;
 import subway.domain.Line;
 
 import java.util.ArrayList;

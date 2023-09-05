@@ -1,6 +1,6 @@
 package subway.domain.features;
 
-import subway.domain.ErrorMessage;
+import subway.domain.message.ErrorMessage;
 
 import java.util.Arrays;
 

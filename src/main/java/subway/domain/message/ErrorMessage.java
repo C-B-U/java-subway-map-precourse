@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.message;
 
 public enum ErrorMessage {
     WRONG_STATION_NAME_LENGTH("지하철 역 이름은 2글자 이상만 가능합니다. 다시 입력해 주세요."),

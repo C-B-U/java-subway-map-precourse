@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.message;
 
 public enum ProcessMessage {
     MAIN_SCREEN("메인 화면"),

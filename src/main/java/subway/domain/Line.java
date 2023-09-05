@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.domain.message.ErrorMessage;
+
 import java.util.LinkedList;
 import java.util.List;
 

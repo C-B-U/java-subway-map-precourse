@@ -1,7 +1,7 @@
 package subway.controller;
 
-import subway.domain.InformationMessage;
-import subway.domain.ProcessMessage;
+import subway.domain.message.InformationMessage;
+import subway.domain.message.ProcessMessage;
 import subway.domain.features.StationFeatures;
 import subway.service.StationService;
 import subway.view.InputView;

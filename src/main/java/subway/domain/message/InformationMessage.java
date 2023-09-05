@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.domain.message;
 
 public enum InformationMessage {
     REGISTER_STATION("지하철 역이 등록되었습니다."),

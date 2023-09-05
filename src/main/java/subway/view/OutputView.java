@@ -1,8 +1,8 @@
 package subway.view;
 
-import subway.domain.InformationMessage;
+import subway.domain.message.InformationMessage;
 import subway.domain.Line;
-import subway.domain.ProcessMessage;
+import subway.domain.message.ProcessMessage;
 import subway.domain.Station;
 import subway.domain.features.LineFeatures;
 import subway.domain.features.MainFeatures;
