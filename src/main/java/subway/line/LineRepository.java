@@ -31,6 +31,12 @@ public class LineRepository {
                 .anyMatch(line -> line.isSame(name));
     }
 
+    public static void deleteStopStation(Station station) {
+        lines.stream()
+                .filter(line -> line.isContainStation(station))
+                .forEach(lines -> lines.deleteStopStation(station));
+    }
+
     public static void deleteLineByName(Name name) {
         Line line = findLineByName(name);
         lines.remove(line);

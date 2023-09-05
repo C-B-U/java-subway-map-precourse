@@ -1,5 +1,7 @@
 package subway.station;
 
+import subway.line.LineRepository;
+
 public class StationService {
 
     public void create(Name name) {
@@ -7,6 +9,8 @@ public class StationService {
     }
 
     public void delete(Name name) {
-        StationRepository.deleteStation(name);
+        Station station = StationRepository.findByName(name);
+        LineRepository.deleteStopStation(station);
+        StationRepository.deleteStation(station);
     }
 }

@@ -29,8 +29,7 @@ public class StationRepository {
                 .anyMatch(station -> station.isSame(name));
     }
 
-    public static void deleteStation(Name name) {
-        Station station = findByName(name);
+    public static void deleteStation(Station station) {
         stations.remove(station);
     }
 

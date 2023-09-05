@@ -59,6 +59,10 @@ public class StopStations {
         }
     }
 
+    public boolean contain(Station station) {
+        return element.contains(station);
+    }
+
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
