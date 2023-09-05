@@ -28,7 +28,7 @@ public class StationController {
 
     private void executeStationRegistration(StationFeatures stationFeatures) {
         if(stationFeatures == StationFeatures.REGISTER) {
-            outputView.printWantedStationForRegister();
+            outputView.printProcess(ProcessMessage.INPUT_REGISTER_STATION);
             try {
                 stationService.registerStation(inputView.inputStationName());
                 outputView.printInformation(InformationMessage.REGISTER_STATION);
@@ -40,7 +40,7 @@ public class StationController {
 
     private void executeStationDeletion(StationFeatures stationFeatures) {
         if(stationFeatures == StationFeatures.DELETE) {
-            outputView.printWantedStationForDelete();
+            outputView.printProcess(ProcessMessage.INPUT_DELETE_STATION);
             try {
                 stationService.deleteStation(inputView.inputStationName());
                 outputView.printInformation(InformationMessage.DELETE_STATION);
@@ -52,7 +52,7 @@ public class StationController {
 
     private void executeStationView(StationFeatures stationFeatures) {
         if(stationFeatures == StationFeatures.VIEW) {
-            outputView.printWantedStationForView();
+            outputView.printProcess(ProcessMessage.VIEW_STATION);
             stationService.viewStation();
         }
     }

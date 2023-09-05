@@ -4,6 +4,7 @@ import subway.domain.InformationMessage;
 import subway.domain.Line;
 import subway.domain.ProcessMessage;
 import subway.domain.Station;
+import subway.domain.features.LineFeatures;
 import subway.domain.features.MainFeatures;
 import subway.domain.features.StationFeatures;
 
@@ -51,18 +52,28 @@ public class OutputView {
         printNewLine();
     }
 
+    public void printLineManagementScreen() {
+        printNewLine();
+        System.out.println(ProcessMessage.LINE_MANAGEMENT_SCREEN);
+        printLineManagementFeature();
+        printSelectWantedFeature();
+    }
+
+    private void printLineManagementFeature() {
+        System.out.println(LineFeatures.REGISTER);
+        System.out.println(LineFeatures.DELETE);
+        System.out.println(LineFeatures.VIEW);
+        System.out.println(LineFeatures.RETURN);
+        printNewLine();
+    }
+
     public void printSelectWantedFeature() {
         System.out.println(ProcessMessage.SELECT_WANTED_FEATURE);
     }
 
-    public void printWantedStationForRegister() {
+    public void printProcess(ProcessMessage message) {
         printNewLine();
-        System.out.println(ProcessMessage.INPUT_REGISTER_STATION);
-    }
-
-    public void printWantedStationForDelete() {
-        printNewLine();
-        System.out.println(ProcessMessage.INPUT_DELETE_STATION);
+        System.out.println(message.toString());
     }
 
     public void printInformation(InformationMessage message) {
@@ -71,40 +82,13 @@ public class OutputView {
         printNewLine();
     }
 
-    public void printWantedStationForView() {
-        printNewLine();
-        System.out.println(ProcessMessage.VIEW_STATION);
-    }
-
     public void printStations(List<Station> stations) {
         stations.forEach(station -> System.out.println(INFO_TAG + station.getName()));
         printNewLine();
     }
 
-    public void printLineManagementScreen() {
-        printNewLine();
-        System.out.println(ProcessMessage.LINE_MANAGEMENT_SCREEN);
-        printStationManagementFeature();
-        printSelectWantedFeature();
-    }
-
-    public void printWantedLineForRegister() {
-        printNewLine();
-        System.out.println(ProcessMessage.INPUT_REGISTER_LINE);
-    }
-
-    public void printWantedLineForView() {
-        printNewLine();
-        System.out.println(ProcessMessage.VIEW_LINE);
-    }
-
     public void printLines(List<Line> lines) {
         lines.forEach(line -> System.out.println(INFO_TAG + line.getName()));
         printNewLine();
-    }
-
-    public void printWantedLineForDelete() {
-        printNewLine();
-        System.out.println(ProcessMessage.INPUT_DELETE_LINE);
     }
 }
