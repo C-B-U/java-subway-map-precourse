@@ -1,6 +1,7 @@
 package subway.view;
 
 import subway.domain.InformationMessage;
+import subway.domain.Line;
 import subway.domain.ProcessMessage;
 import subway.domain.Station;
 import subway.domain.features.MainFeatures;
@@ -90,5 +91,15 @@ public class OutputView {
     public void printWantedLineForRegister() {
         printNewLine();
         System.out.println(ProcessMessage.INPUT_REGISTER_LINE);
+    }
+
+    public void printWantedLineForView() {
+        printNewLine();
+        System.out.println(ProcessMessage.VIEW_LINE);
+    }
+
+    public void printLines(List<Line> lines) {
+        lines.forEach(line -> System.out.println(INFO_TAG + line.getName()));
+        printNewLine();
     }
 }

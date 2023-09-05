@@ -6,6 +6,7 @@ import java.util.Arrays;
 
 public enum LineFeatures {
     REGISTER("1", "노선 등록"),
+    VIEW("3", "노선 조회"),
     RETURN("B", "돌아가기");
 
 

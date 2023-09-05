@@ -2,6 +2,7 @@ package subway.controller;
 
 import subway.domain.InformationMessage;
 import subway.domain.features.LineFeatures;
+import subway.domain.features.StationFeatures;
 import subway.service.LineService;
 import subway.view.InputView;
 import subway.view.OutputView;
@@ -21,6 +22,7 @@ public class LineController {
 
     public void execute(LineFeatures lineFeatures) {
         executeLineRegistration(lineFeatures);
+        executeLineView(lineFeatures);
     }
 
     private void executeLineRegistration(LineFeatures lineFeatures) {
@@ -32,6 +34,13 @@ public class LineController {
             } catch (IllegalArgumentException e) {
                 outputView.printException(e);
             }
+        }
+    }
+
+    private void executeLineView(LineFeatures lineFeatures) {
+        if(lineFeatures == LineFeatures.VIEW) {
+            outputView.printWantedLineForView();
+            lineService.viewLine();
         }
     }
 }
