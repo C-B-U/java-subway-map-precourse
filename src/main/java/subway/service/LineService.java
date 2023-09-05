@@ -23,4 +23,13 @@ public class LineService {
     public void viewLine() {
         outputView.printLines(LineRepository.lines());
     }
+
+    public void drawMap() {
+        LineRepository.lines()
+                .forEach(line -> {
+                    outputView.printSubwayMapLine(line);
+                    line.getStationList().forEach(outputView::printSubwayMapStation);
+                    outputView.printNewLine();
+                });
+    }
 }

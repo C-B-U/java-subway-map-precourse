@@ -21,7 +21,6 @@ public class Line {
     }
 
     private void validateIsExist(Station station) {
-        System.out.println(stationList.size());
         if (stationList.stream().anyMatch(value -> value.getName().equals(station.getName()))) {
             throw new IllegalArgumentException(ErrorMessage.ALREADY_EXIST_STATION.toString());
         }
@@ -51,6 +50,4 @@ public class Line {
     public List<Station> getStationList() {
         return new LinkedList<>(stationList);
     }
-
-    // 추가 기능 구현
 }

@@ -12,7 +12,8 @@ public enum ProcessMessage {
     INPUT_DELETE_STATION("삭제할 역 이름을 입력하세요."),
     INPUT_DELETE_LINE("삭제할 노선 이름을 입력하세요."),
     VIEW_STATION("역 목록"),
-    VIEW_LINE("노선 목록");
+    VIEW_LINE("노선 목록"),
+    SUBWAY_MAP("지하철 노선도");
 
     private static final String PREFIX = "## ";
     private final String message;

@@ -12,6 +12,7 @@ import java.util.List;
 
 public class OutputView {
     private static final String INFO_TAG = "[INFO] ";
+    private static final String DIVISION = "---";
 
     public void printMainScreen() {
         System.out.println(ProcessMessage.MAIN_SCREEN);
@@ -90,5 +91,15 @@ public class OutputView {
     public void printLines(List<Line> lines) {
         lines.forEach(line -> System.out.println(INFO_TAG + line.getName()));
         printNewLine();
+    }
+
+    public void printSubwayMapStation(Station station) {
+        System.out.println(INFO_TAG + station.getName());
+    }
+
+    public void printSubwayMapLine(Line line) {
+        System.out.println(INFO_TAG + line.getName());
+        System.out.println(DIVISION);
+
     }
 }

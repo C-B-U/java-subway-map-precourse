@@ -85,4 +85,10 @@ public class LineController {
             lineService.viewLine();
         }
     }
+
+    public void drawMap() {
+        outputView.printProcess(ProcessMessage.SUBWAY_MAP);
+        lineService.drawMap();
+        outputView.printNewLine();
+    }
 }

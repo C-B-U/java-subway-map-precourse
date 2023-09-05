@@ -24,6 +24,7 @@ public class Controller {
     public void execute(MainFeatures mainFeatures) {
         executeStationManagement(mainFeatures);
         executeLineManagement(mainFeatures);
+        executeSubwayMapManagement(mainFeatures);
     }
 
     private void executeStationManagement(MainFeatures mainFeatures) {
@@ -35,6 +36,12 @@ public class Controller {
     private void executeLineManagement(MainFeatures mainFeatures) {
         if(mainFeatures == MainFeatures.LINE_MANAGEMENT) {
             lineController.start();
+        }
+    }
+
+    private void executeSubwayMapManagement(MainFeatures mainFeatures) {
+        if(mainFeatures == MainFeatures.PRINT_SUBWAY_MAP) {
+            lineController.drawMap();
         }
     }
 }
