@@ -22,6 +22,7 @@ public class LineController {
 
     public void execute(LineFeatures lineFeatures) {
         executeLineRegistration(lineFeatures);
+        executeLineDeletion(lineFeatures);
         executeLineView(lineFeatures);
     }
 
@@ -31,6 +32,18 @@ public class LineController {
             try {
                 lineService.registerLine(inputView.inputLineName());
                 outputView.printInformation(InformationMessage.REGISTER_LINE);
+            } catch (IllegalArgumentException e) {
+                outputView.printException(e);
+            }
+        }
+    }
+
+    private void executeLineDeletion(LineFeatures lineFeatures) {
+        if(lineFeatures == LineFeatures.DELETE) {
+            outputView.printWantedLineForDelete();
+            try {
+                lineService.deleteLine(inputView.inputLineName());
+                outputView.printInformation(InformationMessage.DELETE_STATION);
             } catch (IllegalArgumentException e) {
                 outputView.printException(e);
             }

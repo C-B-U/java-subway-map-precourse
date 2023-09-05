@@ -12,6 +12,10 @@ public class LineService {
         LineRepository.addLine(line);
     }
 
+    public void deleteLine(Line line) {
+        LineRepository.deleteLine(line);
+    }
+
     public void viewLine() {
         outputView.printLines(LineRepository.lines());
     }

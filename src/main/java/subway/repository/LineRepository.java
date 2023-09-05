@@ -1,5 +1,6 @@
 package subway.repository;
 
+import subway.domain.ErrorMessage;
 import subway.domain.Line;
 
 import java.util.ArrayList;
@@ -26,5 +27,16 @@ public class LineRepository {
 
     public static boolean deleteLineByName(String name) {
         return lines.removeIf(line -> Objects.equals(line.getName(), name));
+    }
+
+    public static void deleteLine(Line line) {
+        validateExistLine(line);
+        lines.removeIf(value -> Objects.equals(value.getName(), line.getName()));
+    }
+
+    private static void validateExistLine(Line line) {
+        if (lines.stream().noneMatch(value -> value.getName().equals(line.getName()))) {
+            throw new IllegalArgumentException(ErrorMessage.NOT_EXIST_LINE.toString());
+        }
     }
 }

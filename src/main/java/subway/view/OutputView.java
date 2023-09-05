@@ -102,4 +102,9 @@ public class OutputView {
         lines.forEach(line -> System.out.println(INFO_TAG + line.getName()));
         printNewLine();
     }
+
+    public void printWantedLineForDelete() {
+        printNewLine();
+        System.out.println(ProcessMessage.INPUT_DELETE_LINE);
+    }
 }
